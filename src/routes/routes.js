@@ -11,6 +11,7 @@ import Icons from 'src/pages/Icons.vue'
 import Maps from 'src/pages/Maps.vue'
 import Notifications from 'src/pages/Notifications.vue'
 import Upgrade from 'src/pages/Upgrade.vue'
+import Categories from 'src/pages/Categories.vue'
 
 const routes = [
   {
@@ -26,7 +27,7 @@ const routes = [
       {
         path: 'overview',
         name: 'Overview',
-        component: Overview
+        component: Categories
       },
       {
         path: 'user',
