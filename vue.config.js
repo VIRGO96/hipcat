@@ -1,5 +1,5 @@
 const path = require('path');
-const webpack = require('webpack');
+// const webpack = require('webpack');
 
 function resolveSrc(_path) {
   return path.join(__dirname, _path);
@@ -16,9 +16,9 @@ module.exports = {
       }
     },
     plugins: [
-      new webpack.optimize.LimitChunkCountPlugin({
-        maxChunks: 6
-      })
+      // new webpack.optimize.LimitChunkCountPlugin({
+      //   maxChunks: 6
+      // })
     ]
   },
   pwa: {
