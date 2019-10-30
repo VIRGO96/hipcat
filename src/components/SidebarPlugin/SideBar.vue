@@ -1,15 +1,14 @@
 <template>
   <div class="sidebar"
        :style="sidebarStyle"
-       :data-color="backgroundColor"
-       :data-image="backgroundImage">
+       :data-color="backgroundColor">
     <div class="sidebar-wrapper">
-      <div class="logo">
+      <div class="logo" style="background-color:white;">
         <a href="#" class="simple-text logo__container">
-            <div class="logo-img">
+            <!-- <div class="logo-img"> -->
                 <img src="img/vue-logo.png" alt="">
-            </div>
-          {{title}}
+            <!-- </div>
+          {{title}} -->
         </a>
       </div>
 
@@ -47,7 +46,7 @@
       },
       backgroundColor: {
         type: String,
-        default: 'black',
+        default: 'red',
         validator: (value) => {
           let acceptedValues = ['', 'blue', 'azure', 'green', 'orange', 'red', 'purple', 'black']
           return acceptedValues.indexOf(value) !== -1
