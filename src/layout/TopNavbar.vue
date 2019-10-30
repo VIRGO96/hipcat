@@ -1,8 +1,8 @@
 <template>
   <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Dashboard</a>
-      <button type="button"
+      <!-- <a class="navbar-brand" href="#">Dashboard</a> -->
+      <!--<button type="button"
               class="navbar-toggler navbar-toggler-right"
               :class="{toggled: $sidebar.showSidebar}"
               aria-controls="navigation-index"
@@ -12,10 +12,10 @@
         <span class="navbar-toggler-bar burger-lines"></span>
         <span class="navbar-toggler-bar burger-lines"></span>
         <span class="navbar-toggler-bar burger-lines"></span>
-      </button>
+      </button>-->
       <div class="collapse navbar-collapse justify-content-end">
         <ul class="nav navbar-nav mr-auto">
-          <li class="nav-item">
+          <!--<li class="nav-item">
             <a class="nav-link" href="#" data-toggle="dropdown">
               <i class="nc-icon nc-palette"></i>
             </a>
@@ -31,21 +31,45 @@
             <a class="dropdown-item" href="#">Notification 3</a>
             <a class="dropdown-item" href="#">Notification 4</a>
             <a class="dropdown-item" href="#">Another notification</a>
-          </base-dropdown>
+          </base-dropdown>-->
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nc-icon nc-zoom-split"></i>
-              <span class="d-lg-block">&nbsp;Search</span>
+              <span class="d-lg-block">&nbsp;Social Media</span>
+            </a>
+          </li>
+          <li class="nav-item ml-4">
+            <a href="#" class="nav-link">
+              <i class="nc-icon nc-zoom-split"></i>
+              <span class="d-lg-block">&nbsp;Calendar</span>
+            </a>
+          </li>
+          <li class="nav-item ml-4">
+            <a href="#" class="nav-link">
+              <i class="nc-icon nc-zoom-split"></i>
+              <span class="d-lg-block">&nbsp;Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item ml-4">
+            <a href="#" class="nav-link">
+              <i class="nc-icon nc-atom"></i>
+              <span class="d-lg-block">&nbsp;Digital Coach</span>
+            </a>
+          </li>
+          <li class="nav-item ml-4">
+            <a href="#" class="nav-link">
+              <i class="nc-icon nc-zoom-split"></i>
+              <span class="d-lg-block">&nbsp;Marketing Profile</span>
             </a>
           </li>
         </ul>
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
             <a class="nav-link" href="#">
-              Account
+              <img src="../assets/img/profile.png" style="height:26px;width:26px;" alt="">
             </a>
           </li>
-          <base-dropdown title="Dropdown">
+          <!-- <base-dropdown title="Dropdown">
             <a class="dropdown-item" href="#">Action</a>
             <a class="dropdown-item" href="#">Another action</a>
             <a class="dropdown-item" href="#">Something</a>
@@ -58,7 +82,7 @@
             <a href="#" class="nav-link">
               Log out
             </a>
-          </li>
+          </li> -->
         </ul>
       </div>
     </div>
@@ -99,4 +123,8 @@
 </script>
 <style>
 
+.sidebar .logo, body > .navbar-collapse .logo {
+    padding: 1px 15px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
 </style>
