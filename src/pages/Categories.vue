@@ -12,31 +12,16 @@
         </div>
         <hr style="border:1px solid #CBCACA">
         <div class="row">
-            <!-- <div class="col-md-3 ml-1 mt-2 pt-5 pb-5" v-for="(item,i) in categories" :key="i"
-            :style="'background: linear-gradient(0deg, rgba(44, 57, 67, 0.75), rgba(44, 57, 67, 0.75)),url('+item.link+')no-repeat center'">
-            <p class="text-center" style="color:white;">{{item.name}}</p>
-            </div> -->
             <div class="col-md-3" v-for="(item,i) in categories" :key="i">
+            <router-link to="category-details">
+
                 <div class="col-md-12 pt-5 pb-5 mt-4"
-                :style="'background-repeat: no-repeat;background-size: 100% 100%;background: linear-gradient(0deg, rgba(44, 57, 67, 0.75), rgba(44, 57, 67, 0.75)),url('+item.link+')'">
+                :style="'background: linear-gradient(0deg, rgba(44, 57, 67, 0.75), rgba(44, 57, 67, 0.75)),url('+item.link+');background-repeat: no-repeat;background-size: 100% 100%;'">
                     <p class="text-center text-white" >{{item.name}}</p>
                 </div>
+            </router-link>
+
             </div>
-            <!-- <div class="col-md-3">
-                <div class="col-md-12 opd pt-5 pb-5">
-                    <p class="text-center text-white" >hello</p>
-                </div>
-            </div> -->
-            <!-- <div class="col-md-3">
-                <div class="col-md-12 opd pt-5 pb-5">
-                    <p class="text-center text-white" >hello</p>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="col-md-12 opd pt-5 pb-5">
-                    <p class="text-center text-white" >hello</p>
-                </div>
-            </div> -->
         </div>
     </div>
 </template>
