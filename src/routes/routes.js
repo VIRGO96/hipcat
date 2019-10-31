@@ -12,6 +12,8 @@ import Maps from 'src/pages/Maps.vue'
 import Notifications from 'src/pages/Notifications.vue'
 import Upgrade from 'src/pages/Upgrade.vue'
 import Categories from 'src/pages/Categories.vue'
+import CategorieDetails from 'src/pages/CategorieDetails.vue'
+import StarredPosts from 'src/pages/StarredPosts.vue'
 
 const routes = [
   {
@@ -28,6 +30,16 @@ const routes = [
         path: 'overview',
         name: 'Overview',
         component: Categories
+      },
+      {
+        path: 'category-details',
+        name: 'category-details',
+        component: CategorieDetails
+      },
+      {
+        path: 'starred-posts',
+        name: 'starred-posts',
+        component: StarredPosts
       },
       {
         path: 'user',
