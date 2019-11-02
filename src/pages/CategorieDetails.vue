@@ -26,9 +26,7 @@
                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                      sed do eiusmod tempor. tempor.... 
                 </b-card-text>
-                <div class="card-footer">
-
-                </div>
+                
                 <template v-slot:footer class="p-0">
                     <div class="col-md-3 pl-0 pr-0 text-muted">
                     <span style="display:block;">
@@ -104,7 +102,7 @@ export default {
           { value: 'DOMESTIC', text: 'DOMESTIC' }
         ]
       }
-}
+    }
 }
 </script>
 <style scoped>
