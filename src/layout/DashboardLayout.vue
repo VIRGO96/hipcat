@@ -3,8 +3,19 @@
     <side-bar>
       <mobile-menu slot="content"></mobile-menu>
       <sidebar-link to="/admin/overview">
-        <i class="nc-icon nc-chart-pie-35"></i>
-        <p>Dashboard</p>
+        <p>Categories</p>
+      </sidebar-link>
+      <sidebar-link to="/admin/starred-posts">
+        <p>Starred Posts</p>
+      </sidebar-link>
+      <sidebar-link to="/admin/overview">
+        <p>Drafts</p>
+      </sidebar-link>
+      <sidebar-link to="/admin/upcoming-posts">
+        <p>Upcoming Posts</p>
+      </sidebar-link>
+      <sidebar-link to="/admin/previously-posted">
+        <p>Previously Posted</p>
       </sidebar-link>
       <sidebar-link to="/admin/user">
         <i class="nc-icon nc-circle-09"></i>
