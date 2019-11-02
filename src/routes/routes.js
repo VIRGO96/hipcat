@@ -14,6 +14,8 @@ import Upgrade from 'src/pages/Upgrade.vue'
 import Categories from 'src/pages/Categories.vue'
 import CategorieDetails from 'src/pages/CategorieDetails.vue'
 import StarredPosts from 'src/pages/StarredPosts.vue'
+import UpcomingPosts from 'src/pages/UpcomingPosts.vue'
+import PreviouslyPosted from 'src/pages/PreviouslyPosted.vue'
 
 const routes = [
   {
@@ -40,6 +42,16 @@ const routes = [
         path: 'starred-posts',
         name: 'starred-posts',
         component: StarredPosts
+      },
+      {
+        path: 'upcoming-posts',
+        name: 'upcoming-posts',
+        component: UpcomingPosts
+      },
+      {
+        path: 'previously-posted',
+        name: 'previously-posted',
+        component: PreviouslyPosted
       },
       {
         path: 'user',
