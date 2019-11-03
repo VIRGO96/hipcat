@@ -9,6 +9,9 @@
   export default {}
 </script>
 <style lang="scss">
+.familia{
+  font-family: Monteserrat;
+}
   .vue-notifyjs.notifications{
     .list-move {
       transition: transform 0.3s, opacity 0.4s;
