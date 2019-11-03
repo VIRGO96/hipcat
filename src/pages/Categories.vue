@@ -1,14 +1,121 @@
 <template>
     <div class="container" style="background-color:white;">
+       
+            <b-modal id="modal-1" title="New Post" style="margin-top:-140px;">
+                <b-container>
+                    <div class="row">
+                        <div class="col-md-12 pr-0 pl-0">
+                            <span class="fa fa-share-alt"></span> <span class="familia" style="color:#2C3943">Select Your Social Accounts</span>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12 pr-0 pl-0" style="border: 1px solid #CBCACA;" >
+                            <span class="pl-2"> <input type="checkbox">  
+                            <!-- <span style="background-color:#3b5998;font-size:12px;color:white;border-radius:1rem;" class="ml-2 fa fa-facebook p-1"></span> -->
+                            <i style="color:#3b5998" class="fab fa-facebook ml-2"></i>
+                             <span > Islay Hills </span>
+                             </span>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-12 pr-0 pl-0" style="border: 1px solid #CBCACA;" >
+                            <span class="pl-2"> <input type="checkbox"> 
+                             <!-- <span style="background-color:#3b5998;font-size:12px;color:white;border-radius:1rem;" 
+                             class="ml-2 fa fa-facebook p-1"></span> -->
+                              <i style="color:#3b5998" class="fab fa-facebook ml-2"></i>
+                             <span > Islay Hills </span>
+                              </span>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-12 pr-0 pl-0" style="border: 1px solid #CBCACA;" >
+                            <span class="pl-2"> <input type="checkbox">  
+                            <!-- <span style="background-color:#00aced;font-size:12px;color:white;border-radius:1rem;" 
+                            class="ml-2 fa fa-twitter p-1"></span>  -->
+                            <i style="color:#00aced" class="fab fa-twitter ml-2"></i>
+                             <span > Islay Hills </span>
+                              <!-- </span> -->
+                            Islay Hills</span>
+                        </div>
+                    </div>
+                    <!-- <i class="fab fa-twitter"></i> -->
+                    <div class="row mt-2">
+                        <div class="col-md-12 pr-0 pl-0"  >
+                            <span style="display:block;">
+                                <i style="color: #6C6C6C;" class="fa fa-plus-square"></i>
+                                <span style="color: #6C6C6C;font-size:12px;">Add new account</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-12 pr-0 pl-0"  >
+                            <span style="display:block;">
+                                <i style="color: #2C3943;" class="fa fa-edit"></i>
+                                <span style="color: #2C3943;">Add/Customize Your Caption:</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12 pr-0 pl-0"  >
+                            <b-form-textarea
+                            placeholder="Is your smile slowly turning into a frown? Give it life with dermal fillers!"
+                            rows="3"
+                            max-rows="6"
+                            ></b-form-textarea>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12 pr-0 pl-0"  >
+                            <span style="display:block;">
+                                <i style="color: #2C3943;" class="fa fa-file-image-o"></i>
+                                <span style="color: #2C3943;">Add Your Media:</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12 pr-0 pl-0"  >
+                          <vue-dropzone ref="myVueDropzone" id="dropzone" :options="dropzoneOptions"></vue-dropzone>                            
+                        </div>
+                    </div>
+
+                </b-container>
+                 <template v-slot:modal-footer>
+                    <div class="w-100">
+                        <!-- <a-select defaultValue="lucy" style="width: 120px" @change="handleChange">
+                    <a-select-option value="jack">Jack</a-select-option>
+                    <a-select-option value="lucy">Lucy</a-select-option>
+                    <a-select-option value="disabled" disabled>Disabled</a-select-option>
+                    <a-select-option value="Yiminghe">yiminghe</a-select-option>
+                    </a-select> -->
+                    <select class="ml-3 float-right col-md-4" style="padding:0.3rem;background: linear-gradient(258.19deg, #089D9B 0%, #0BC1BB 100%);color:white;">
+                        <option style="background: #2C3943;color:white;" val="POST NOW">POST NOW</option>
+                        <option style="background: #2C3943;color:white;" val="SAVE AS DRAFT">SAVE AS DRAFT</option>
+                    </select>
+                    <!-- <b-form-select style="background: linear-gradient(258.19deg, #089D9B 0%, #0BC1BB 100%);color:white;" class="col-md-4 pull-right ml-3 " v-model="selected2" :options="options2"></b-form-select> -->
+                        <a-date-picker class="float-right col-md-6"
+                        placeholder="SCHEDULE FOR LATER"
+                        format="YYYY-MM-DD HH:mm"
+                        :showTime="{ defaultValue: moment('00:00:00', 'HH:mm:ss') }"
+
+                        />
+                        <!-- <p id="tooltip-button-variant" class="float-right familia mt-2" 
+                        style="cursor:pointer;text-decoration-line: underline;font-size:16px;color: #2C3943;"> 
+                        <span   class="fa fa-calendar">
+                            </span> SCHEDULE FOR LATER
+                        </p> -->
+                    </div>
+                </template>
+            </b-modal>
         <div class="row">
             <div class="col-md-4 mt-3">
                 <p  style="font-size:24px;font-weight:100;color:#2C3943">Post Categories</p>
             </div>
             <div class="col-md-8 mt-3">
-                <button style="border:none;background: linear-gradient(263.4deg, #089D9B 0%, #0BC1BB 100%);" class="btn btn-fill pull-right"><span style="color:white;" class="fa fa-plus"></span> NEW POST</button>
+                <button v-b-modal.modal-1 style="border:none;background: linear-gradient(263.4deg, #089D9B 0%, #0BC1BB 100%);" class="btn btn-fill pull-right"><span style="color:white;" class="fa fa-plus"></span> NEW POST</button>
                 <b-form-select class="col-md-3 pull-right mr-3" v-model="selected" :options="options"></b-form-select>
-                <b-form-input class="col-md-3 pull-right mr-3"  placeholder="Enter your name"></b-form-input> 
+                <b-form-input class="col-md-3 pull-right mr-3"  placeholder="Search"></b-form-input> 
             </div>
+
         </div>
         <hr style="border:1px solid #CBCACA">
         <div class="row">
@@ -25,11 +132,83 @@
         </div>
     </div>
 </template>
-
 <script>
+import VueDropzone from 'vue2-dropzone'
+  import moment from 'moment'
 export default {
+    components:{
+        VueDropzone
+    },
+    methods:{
+         moment,
+    //   range(start, end) {
+    //     const result = [];
+    //     for (let i = start; i < end; i++) {
+    //       result.push(i);
+    //     }
+    //     return result;
+    //   },
+
+    //   disabledDate(current) {
+    //     // Can not select days before today and today
+    //     return current && current < moment().endOf('day');
+    //   },
+
+    //   disabledDateTime() {
+    //     return {
+    //       disabledHours: () => this.range(0, 24).splice(4, 20),
+    //       disabledMinutes: () => this.range(30, 60),
+    //       disabledSeconds: () => [55, 56],
+    //     };
+    //   },
+
+    //   disabledRangeTime(_, type) {
+    //     if (type === 'start') {
+    //       return {
+    //         disabledHours: () => this.range(0, 60).splice(4, 20),
+    //         disabledMinutes: () => this.range(30, 60),
+    //         disabledSeconds: () => [55, 56],
+    //       };
+    //     }
+    //     return {
+    //       disabledHours: () => this.range(0, 60).splice(20, 4),
+    //       disabledMinutes: () => this.range(0, 31),
+    //       disabledSeconds: () => [55, 56],
+    //     };
+    //   },
+
+        dropzoneTemplate: function () {
+            // return `<div>
+            //         <div> <span data-dz-name /> </div>
+            //         <div> <span class="fa fa-trash"> </span> </div>
+            //          <div class="preview-container">
+            //                 <img data-dz-thumbnail class="img-thumbnail border-0" />
+            //                 <i class="simple-icon-doc preview-icon"></i>
+            //             </div>
+            //         </div>`
+        return `<div style="background:blue;" class="dz-preview dz-file-preview mb-3">
+                    <div  style="background:grey;color:white;" class="d-flex flex-row "> <div class="p-0 w-30 position-relative">
+                        <div class="dz-error-mark"><span><i></i>  </span></div>
+                        <div class="dz-success-mark"><span><i></i></span></div>
+                        <div class="preview-container">
+                            <img data-dz-thumbnail class="img-thumbnail border-0" />
+                            <i class="simple-icon-doc preview-icon"></i>
+                        </div>
+                    </div>
+                    <div class="pl-3 pt-2 pr-2 pb-1 w-70 dz-details position-relative">
+                        <div> <span data-dz-name /> </div>
+                        <div class="text-primary text-extra-small" data-dz-size /> </div>
+                        <div class="dz-progress"><span class="dz-upload" data-dz-uploadprogress></span></div>
+                        <div class="dz-error-message"><span data-dz-errormessage></span></div>
+                    </div>
+                    <a href="#" class="remove" data-dz-remove> <i class="glyph-icon simple-icon-trash"></i> </a>
+                    </div>
+            `
+        }
+    },
      data() {
       return {
+          
         categories:[
         {name:'Recent',
         link:'https://s3-alpha-sig.figma.com/img/112c/8dff/1e41408fdc7ece8ec87f8510db5ece0b?Expires=1573430400&Signature=SwsI3L6pltHsT3tBXh9U6i9moyu6Ng2LSxURl4TROFOY3INRKKV4fhUtVMDi1UPbt17-FFugWmGmEy44RMRzJFmSLQT9TN0a94-ZprXrtK2r4AupSfcQGZjkWwDcCXYcniVWLxVxxCYJnWZe6VD20~MEFlS8JqNdaf1eUXX2NG~DLZvgKP6JsrrloRlS4AljqsdnrsRgAy8EiB5hUQe73dudtlTSFsdBqGKGYzZqucviwVFX9yCWYqO~MjMtUxw3fJM8nmQ8FfIli9WTu4U488Ls47PISO7IcDvtSoNrmJZtCVm8rA9OUJL361Ao9PnRq-PhKBKTrK2amz99~Sr5QA__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA'},
@@ -69,17 +248,31 @@ export default {
         
         
         ],  
-        
+        selected2:'POST NOW',        
         selected:'INDUSTRY',
+        options2: [
+          { value: 'POST NOW', text: 'POST NOW' },
+          { value: 'FOR LATER', text: 'FOR LATER' }
+        ],
         options: [
           { value: 'INDUSTRY', text: 'INDUSTRY' },
           { value: 'DOMESTIC', text: 'DOMESTIC' }
-        ]
+        ],
+        dropzoneOptions: {
+            url: 'https://httpbin.org/post',
+            thumbnailHeight: 160,
+            maxFilesize: 2,
+            previewTemplate: this.dropzoneTemplate(),
+            headers: { 'My-Awesome-Header': 'header value' }
+        },
       }
-}
+    }
 }
 </script>
 <style scoped>
+.modal-content{
+    margin-top:-130px !important;
+}
 .opd{
     background: linear-gradient(0deg, rgba(44, 57, 67, 0.75), rgba(44, 57, 67, 0.75)), url("https://s3-alpha-sig.figma.com/img/6724/4505/921fad164bebf5579147760b6e9e48b0?Expires=1573430400&Signature=EcdXZf5eac9-xmPXA-I0lHx2SI3PSV-NFE0Px2u4klbPaJxZghAgWc~T9cAoSLUi0HAkE5yqvC1VUgpTrLYQL0YfjKPojbAzRWb2Url9UBcCFhPHceidUUGkJWLLbHhHfAYhQlMdG7SWX5nXSsUafCOrQhIn9KzOkjeH-7eawIluNO2fvO6Oz3IAAyjq18LIUAhjGqKjXLY45F9wAaraZW2RI~IzjB1IdoAN2mheVIyW4jX6EEVsWv4eno5DHpfRceE8x~Lybmf358WDCx0AZSce1-RQTSKLL9KDdkDmqHYnFhKK~oq406Khb~lJvlvjCCj65AzbhNy3-dHY1hHUdw__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA")  no-repeat center;
 
