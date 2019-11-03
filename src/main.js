@@ -23,6 +23,12 @@ import LightBootstrap from './light-bootstrap-main'
 import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+import 'vue2-dropzone/dist/vue2Dropzone.min.css'
+
+import Antd from 'ant-design-vue'
+import 'ant-design-vue/dist/antd.css'
+Vue.use(Antd)
+
 // router setup
 import routes from './routes/routes'
 
