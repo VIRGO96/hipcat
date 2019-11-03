@@ -47,8 +47,18 @@
                         </span>
                     </div>
                     <div class="col-md-1  ml-5 mt-1 text-center">
-                        <h5 class="ml-1 pull-right familia" style="font-size:13px;color:red;">DELETE</h5>
+                        <h5 class="ml-1 pull-right familia" style="font-size:13px;color:red;" v-b-modal.modal-3>DELETE</h5>
                     </div>
+                    <b-modal id="modal-3" style="background-color:blue;" hide-header hide-footer>
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                        <i class="fas fa-info-circle"></i>
+                        <p class="text-center familia text-white">Are you sure you want to delete this post ?</p>
+                                <button class="pl-5 pr-5 familia bg-transparent" style="border:1px solid;color: white;">Cancel</button>
+                                <button class="ml-2 pl-5 pr-5 bg-white familia" style="color: #2C3943;">Yes</button>
+                            </div>
+                        </div>
+                    </b-modal>
                     <div class="col-md-1 mt-1 mr-2 text-center">
                         <h5 class="pull-right familia" style="font-size:13px;color:blue;">EDIT</h5>
                     </div>
@@ -58,9 +68,6 @@
                     </div>
 
                 </b-card-body>
-                
-                
-                <!-- <b-button href="#" variant="primary">Go somewhere</b-button> -->
               </b-card>
 
             </div>
@@ -99,7 +106,7 @@
                         </span>
                     </div>
                     <div class="col-md-1  ml-5 mt-1 text-center">
-                        <h5 class="ml-1 pull-right familia" style="font-size:13px;color:red;">DELETE</h5>
+                        <h5 class="ml-1 pull-right familia" style="font-size:13px;color:red;cursor:pointer;" v-b-modal.modal-3>DELETE</h5>
                     </div>
                     <div class="col-md-1 mt-1 mr-2 text-center">
                         <h5 class="pull-right familia" style="font-size:13px;color:blue;">EDIT</h5>
@@ -140,5 +147,10 @@ export default {
 }
 }
 </script>
-<style scoped>
+<style>
+#modal-3___BV_modal_content_{
+background: #0BC1BB;
+box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.3);
+border-radius: 5px;    
+}
 </style>
