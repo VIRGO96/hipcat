@@ -13,15 +13,18 @@
     "lint-fix": "vue-cli-service lint --fix"
   },
   "dependencies": {
+    "ant-design-vue": "^1.4.4",
     "bootstrap": "^4.3.1",
     "bootstrap-vue": "^2.0.4",
     "chartist": "^0.11.0",
-    "core-js": "^3.2.1",
+    "core-js": "^2.6.10",
     "google-maps": "^3.2.1",
+    "moment": "^2.24.0",
     "register-service-worker": "^1.5.2",
     "v-tooltip": "^2.0.0-rc.33",
     "vue": "^2.6.6",
     "vue-router": "^3.0.2",
+    "vue2-dropzone": "^3.6.0",
     "vue2-google-maps": "^0.8.4"
   },
   "devDependencies": {
