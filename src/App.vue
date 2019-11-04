@@ -9,6 +9,15 @@
   export default {}
 </script>
 <style lang="scss">
+.content{
+  padding: 0px 15px !important;
+
+}
+.main-panel{
+  background-color:white !important;
+  padding: 0px 15px !important;
+
+}
 .familia{
   font-family: Monteserrat;
 }
