@@ -73,8 +73,13 @@
                         </div>
                     </div>
                     <div class="row mt-3">
-                        <div class="col-md-12 pr-0 pl-0"  >
-                          <vue-dropzone ref="myVueDropzone" id="dropzone" :options="dropzoneOptions"></vue-dropzone>                            
+                        <div class="col-md-5 form-group inputDnD pr-0 pl-0">
+                            <input type="file" style="" class="form-control-file  text-dark font-weight-bold" id="inputFile" accept="image/*"  @change="onFilePicked" @drop.prevent="readUrl" @dragover.prevent  
+                            data-title="Drag and drop a files">
+                        </div>
+                        <div  v-if="link!=''"  class="col-md-3 mt-1" style="position:relative;">
+                            <div class="top-right "> <span @click="link=''" class="fa fa-times bg-white rounded" style="color:black;"></span></div>
+                            <img width="100" height="90" :src="link" alt="" srcset="">
                         </div>
                     </div>
 
@@ -140,6 +145,29 @@ export default {
         VueDropzone
     },
     methods:{
+        onFilePicked(event){
+            let reader = new FileReader();
+            reader.onload = (e) => {
+            this.link=e.target.result
+            }
+            reader.readAsDataURL(event.target.files[0]);
+
+        },
+        readUrl(event) {
+            // console.log(event.dataTransfer.files[0])
+            // if (input.files && input.files[0]) {
+                let reader = new FileReader();
+                reader.onload = (e) => {
+                let imgData = e.target.result;
+                this.link=e.target.result
+                let imgName = event.dataTransfer.files[0];
+                // input.setAttribute("data-title", imgName);
+                console.log(e.target.result);
+                }
+                reader.readAsDataURL(event.dataTransfer.files[0]);
+            // }
+
+        },
          moment,
     //   range(start, end) {
     //     const result = [];
@@ -208,7 +236,7 @@ export default {
     },
      data() {
       return {
-          
+        link:'https://s3-alpha-sig.figma.com/img/35dd/3fbc/03d02e4aaff5cc323a47bd8ff22ea930?Expires=1574035200&Signature=HclHGHUTbBEn~X75sc-A4-JIz7AcOf8f-uzy~4T4rCbelAJbhMiykFatms1B4EvkSm8Glyu-K3KKZ9vtM5PSOr38h25N5xu~l9m5vdu4RrZNf5nAn1X6Y03Ffmk4OyWY27mecGMykBiPMwakIVB~DmkII1Nd87ZV1Q-NHe7M5rEiAn-HL~sRXoy8YwRpi1nY8Deh9yFPnNbjg2gFu502nZ12ibi-PHKdzUqv~HTecBdJiNvfoXCsKW7DcYhfIHWgOG8PUAWaf8KQh~Kros1AZoAhjMyltpFwQDIeJ57a7XfpnxdHp7Zhdohk4B4BYEaoH1V2frlpx3nQbAadF9n8tw__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA',  
         categories:[
         {name:'Recent',
         link:'https://s3-alpha-sig.figma.com/img/112c/8dff/1e41408fdc7ece8ec87f8510db5ece0b?Expires=1573430400&Signature=SwsI3L6pltHsT3tBXh9U6i9moyu6Ng2LSxURl4TROFOY3INRKKV4fhUtVMDi1UPbt17-FFugWmGmEy44RMRzJFmSLQT9TN0a94-ZprXrtK2r4AupSfcQGZjkWwDcCXYcniVWLxVxxCYJnWZe6VD20~MEFlS8JqNdaf1eUXX2NG~DLZvgKP6JsrrloRlS4AljqsdnrsRgAy8EiB5hUQe73dudtlTSFsdBqGKGYzZqucviwVFX9yCWYqO~MjMtUxw3fJM8nmQ8FfIli9WTu4U488Ls47PISO7IcDvtSoNrmJZtCVm8rA9OUJL361Ao9PnRq-PhKBKTrK2amz99~Sr5QA__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA'},
@@ -279,5 +307,60 @@ export default {
       /* background:  url("https://s3-alpha-sig.figma.com/img/112c/8dff/1e41408fdc7ece8ec87f8510db5ece0b?Expires=1573430400&Signature=SwsI3L6pltHsT3tBXh9U6i9moyu6Ng2LSxURl4TROFOY3INRKKV4fhUtVMDi1UPbt17-FFugWmGmEy44RMRzJFmSLQT9TN0a94-ZprXrtK2r4AupSfcQGZjkWwDcCXYcniVWLxVxxCYJnWZe6VD20~MEFlS8JqNdaf1eUXX2NG~DLZvgKP6JsrrloRlS4AljqsdnrsRgAy8EiB5hUQe73dudtlTSFsdBqGKGYzZqucviwVFX9yCWYqO~MjMtUxw3fJM8nmQ8FfIli9WTu4U488Ls47PISO7IcDvtSoNrmJZtCVm8rA9OUJL361Ao9PnRq-PhKBKTrK2amz99~Sr5QA__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"  ) no-repeat center; */
 }
 
+
+
 /* linear-gradient(0deg, rgba(44, 57, 67, 0.75), rgba(44, 57, 67, 0.75)), url(Screenshot 2019-08-21 at 10.27.44 AM.png) */
+</style>
+
+
+<style lang="scss">
+.inputDnD {
+  .form-control-file {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 10em;
+    outline: none;
+    visibility: hidden;
+    cursor: pointer;
+    background-color: #c61c23;
+    box-shadow: 0 0 5px dashed currentColor;
+    &:before {
+      content: attr(data-title);
+      position: absolute;
+      top: 0.5em;
+      left: 0;
+      width: 100%;
+      min-height: 6em;
+      line-height: 2em;
+      padding-top: 1.5em;
+      opacity: 1;
+      visibility: visible;
+      text-align: center;
+    //   border:1px solid #dcdcdc;
+    //   border: 0.25em dashed currentColor;
+      border: 1px dashed #000000;
+
+    //   transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+      overflow: hidden;
+    }
+    &:hover {
+      &:before {
+        border-style: solid;
+        box-shadow: inset 0px 0px 0px 0px currentColor;
+      }
+    }
+  }
+}
+
+// PRESENTATIONAL CSS
+body {
+  background-color: #f7f7f9;
+}
+.top-right {
+  position: absolute;
+  top: -1px;
+  right: 2px;
+}
+
 </style>
