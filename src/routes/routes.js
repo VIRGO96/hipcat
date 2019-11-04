@@ -11,11 +11,13 @@ import Icons from 'src/pages/Icons.vue'
 import Maps from 'src/pages/Maps.vue'
 import Notifications from 'src/pages/Notifications.vue'
 import Upgrade from 'src/pages/Upgrade.vue'
+
 import Categories from 'src/pages/Categories.vue'
 import CategorieDetails from 'src/pages/CategorieDetails.vue'
 import StarredPosts from 'src/pages/StarredPosts.vue'
 import UpcomingPosts from 'src/pages/UpcomingPosts.vue'
 import PreviouslyPosted from 'src/pages/PreviouslyPosted.vue'
+import Drafts from 'src/pages/Drafts.vue'
 
 const routes = [
   {
@@ -37,6 +39,11 @@ const routes = [
         path: 'category-details',
         name: 'category-details',
         component: CategorieDetails
+      },
+      {
+        path: 'drafts',
+        name: 'drafts',
+        component: Drafts
       },
       {
         path: 'starred-posts',
