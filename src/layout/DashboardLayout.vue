@@ -8,7 +8,7 @@
       <sidebar-link to="/admin/starred-posts">
         <p>Starred Posts</p>
       </sidebar-link>
-      <sidebar-link to="/admin/overview">
+      <sidebar-link to="/admin/drafts">
         <p>Drafts</p>
       </sidebar-link>
       <sidebar-link to="/admin/upcoming-posts">
@@ -17,7 +17,7 @@
       <sidebar-link to="/admin/previously-posted">
         <p>Previously Posted</p>
       </sidebar-link>
-      <sidebar-link to="/admin/user">
+      <!-- <sidebar-link to="/admin/user">
         <i class="nc-icon nc-circle-09"></i>
         <p>User Profile</p>
       </sidebar-link>
@@ -40,15 +40,15 @@
       <sidebar-link to="/admin/notifications">
         <i class="nc-icon nc-bell-55"></i>
         <p>Notifications</p>
-      </sidebar-link>
+      </sidebar-link> -->
 
-      <template slot="bottom-links">
+      <!-- <template slot="bottom-links">
         <sidebar-link class="active"
                       to="/admin/upgrade">
           <i class="nc-icon nc-alien-33"></i>
           <p>Upgrade to PRO</p>
         </sidebar-link>
-      </template>
+      </template> -->
     </side-bar>
     <div class="main-panel">
       <top-navbar></top-navbar>
