@@ -1,6 +1,6 @@
 <template>
-    <div class="container" style="background-color:white;">
-       
+<div class="content">
+    <div class="container-fluid" style="background-color:white;">
             <b-modal id="modal-1" title="New Post" style="margin-top:-140px;">
                 <b-container>
                     <div class="row">
@@ -136,6 +136,8 @@
             </div>
         </div>
     </div>
+</div>
+
 </template>
 <script>
 import VueDropzone from 'vue2-dropzone'
