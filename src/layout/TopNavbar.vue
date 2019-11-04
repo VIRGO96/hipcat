@@ -1,8 +1,8 @@
 <template>
   <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
-      <!-- <a class="navbar-brand" href="#">Dashboard</a> -->
-      <!--<button type="button"
+      <a class="navbar-brand" href="#"></a>
+      <button type="button"
               class="navbar-toggler navbar-toggler-right"
               :class="{toggled: $sidebar.showSidebar}"
               aria-controls="navigation-index"
@@ -12,15 +12,15 @@
         <span class="navbar-toggler-bar burger-lines"></span>
         <span class="navbar-toggler-bar burger-lines"></span>
         <span class="navbar-toggler-bar burger-lines"></span>
-      </button>-->
+      </button>
       <div class="collapse navbar-collapse justify-content-end">
         <ul class="nav navbar-nav mr-auto">
-          <!--<li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" href="#" data-toggle="dropdown">
               <i class="nc-icon nc-palette"></i>
             </a>
-          </li>
-          <base-dropdown tag="li">
+          </li> -->
+          <!-- <base-dropdown tag="li">
             <template slot="title">
               <i class="nc-icon nc-planet"></i>
               <b class="caret"></b>
@@ -31,35 +31,30 @@
             <a class="dropdown-item" href="#">Notification 3</a>
             <a class="dropdown-item" href="#">Notification 4</a>
             <a class="dropdown-item" href="#">Another notification</a>
-          </base-dropdown>-->
+          </base-dropdown> -->
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nc-icon nc-zoom-split"></i>
-              <span class="d-lg-block">&nbsp;Social Media</span>
+              <span class="d-lg-block">&nbsp;<i class="fas fa-user"></i> Social Media</span>
             </a>
           </li>
           <li class="nav-item ml-4">
             <a href="#" class="nav-link">
-              <i class="nc-icon nc-zoom-split"></i>
-              <span class="d-lg-block">&nbsp;Calendar</span>
+              <span class="d-lg-block">&nbsp; <i class="far fa-calendar-alt"></i> Calendar</span>
+            </a>
+          </li>
+          <li class="nav-item ml-4">
+            <a href="#" class="nav-link">              
+              <span class="d-lg-block">&nbsp;<i class="fas fa-tachometer-alt"></i> Dashboard</span>
             </a>
           </li>
           <li class="nav-item ml-4">
             <a href="#" class="nav-link">
-              <i class="nc-icon nc-zoom-split"></i>
-              <span class="d-lg-block">&nbsp;Dashboard</span>
+              <span class="d-lg-block">&nbsp; <i class="fas fa-atom"></i> Digital Coach</span>
             </a>
           </li>
           <li class="nav-item ml-4">
             <a href="#" class="nav-link">
-              <i class="nc-icon nc-atom"></i>
-              <span class="d-lg-block">&nbsp;Digital Coach</span>
-            </a>
-          </li>
-          <li class="nav-item ml-4">
-            <a href="#" class="nav-link">
-              <i class="nc-icon nc-zoom-split"></i>
-              <span class="d-lg-block">&nbsp;Marketing Profile</span>
+              <span class="d-lg-block">&nbsp; <i class="fas fa-chess-knight"></i>Marketing Profile</span>
             </a>
           </li>
         </ul>
@@ -124,7 +119,7 @@
 <style>
 
 .sidebar .logo, body > .navbar-collapse .logo {
-    padding: 1px 15px !important;
+    padding: 7px 15px !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 </style>
