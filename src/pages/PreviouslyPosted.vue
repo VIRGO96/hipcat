@@ -1,5 +1,6 @@
 <template>
-    <div class="container" style="background-color:white;">
+<div class="content">
+    <div class="container-fluid" style="background-color:white;">
         <div class="row">
             <div class="col-md-4 mt-3">
                 <p  style="font-size:24px;font-weight:100;color:#2C3943">Previously Posts</p>
@@ -124,7 +125,10 @@
 
             </div>
         </div>
-    </div>
+    </div>    
+
+</div>
+
 </template>
 
 <script>
