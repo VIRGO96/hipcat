@@ -240,7 +240,7 @@ $filter-orange:       darken($warning-color, 10%);
 $filter-red:          darken($danger-color, 10%);
 
 
-$new-blue:            #1DC7EA;
+$new-blue:            #0BC1BB;
 $new-purple:          #9368E9;
 $new-red:             #5A6D7C;
 $new-green:           #87CB16;
@@ -257,7 +257,7 @@ $bottombar-back:       bottombar-back !default;
 
 $white-navbar:              rgba(#FFFFFF, .96);
 $blue-navbar:               lighten($new-dark-blue, 10%);
-$azure-navbar:              lighten($new-blue, 15%);
+$azure-navbar:              $new-blue;//lighten($new-blue, 15%);
 $green-navbar:              lighten($new-green, 10%);
 $orange-navbar:             lighten($new-orange, 10%);
 $red-navbar:                lighten($new-red, 10%);
