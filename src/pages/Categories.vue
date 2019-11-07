@@ -145,7 +145,6 @@ import VueDropzone from 'vue2-dropzone'
 export default {
     props:['title'],
     created(){
-       console.log(this.title)
        if(this.title=="logingin"){
            this.notifyVue('top', 'right','Account creation was successfull. Browse our social post library and get posting!')
        }
