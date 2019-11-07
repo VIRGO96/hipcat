@@ -439,7 +439,7 @@
                             >PREVIOUS</button>
                           </div>
                            <div class="col-md-6 text-center">
-                             <router-link to="/dashboard">
+                             <router-link  :to="{ name: 'overview', params: { title: 'logingin' }}">
                             <button  class="col-md-12 text-center p-2 text-white "
                              style="border:none;border-radius: 3px;background: #0BC1BB;" 
                              >NEXT</button>
@@ -483,11 +483,11 @@ export default {
     },
    
     methods:{
-       notifyVue (verticalAlign, horizontalAlign,msg) {
+        notifyVue (verticalAlign, horizontalAlign,msg) {
         // const color = Math.floor((Math.random() * 4) + 1)
         this.$notifications.notify(
           {
-            message: `<span style='margin-left:2rem'>${msg}</span>`,
+            message: `<span'>${msg}</span>`,
             icon:'fa fa-check',
             horizontalAlign: horizontalAlign,
             verticalAlign: verticalAlign,
