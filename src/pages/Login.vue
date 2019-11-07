@@ -2,7 +2,7 @@
 <div class="content">
     <div class="container-fluid" style="background-color:#F3F7FA;">
            <div class="row">
-               <div v-if="reset==false" class="col-md-12">
+               <div v-if="main_auth" class="col-md-12">
                    <b-card
                     tag="article"
                     class="col-md-4 mb-2 ml-auto mr-auto"
@@ -45,7 +45,8 @@
                               </b-form-group>
                               <div class="row">
                                 <div class="col-md-12 text-center">
-                                  <button @click="validate_auth()" class="text-center p-2 text-white pl-5 pr-5" style="border:none;border-radius: 3px;background: #0BC1BB;" >LOGIN</button>
+                                  <button v-on:click="validate_auth" class="text-center p-2 text-white pl-5 pr-5" style="border:none;border-radius: 3px;background: #0BC1BB;" >LOGIN</button>
+                                    <!-- <button @click="validate_auth()">sad</button> -->
                                 </div>
                               </div>
                           </b-tab>
@@ -90,9 +91,6 @@
                                   <button class="text-center col-md-12 text-white p-2 " style="border:none;border-radius: 3px;background: #0BC1BB;">CREATE MY ACCOUNT</button>
                                 </div>
                               </div>
-                                 <!-- Terms and Conditions and Privacy Policy -->
-                                  <!-- <button class="text-center pl-4 pr-4 pt-1 pb-1 text-white" style="background: #0BC1BB;">Login</button> -->
-                              
                           </b-tab>
                         </b-tabs>
                     </b-card-body>
@@ -106,12 +104,12 @@
                     style="margin-top:6rem !important;">
                     
                       <template v-slot:header>
-                        <span class="mb-0 pull-right fa fa-times" @click="reset=false"></span>
+                        <span class="mb-0 pull-right fa fa-times-circle" style="color: #CBCACA;cursor:pointer;" @click="reset=false"></span>
                       </template>
                     <b-card-body>
                       <div class="row">
                         <div class="col-md-12 text-center">
-                          <span class="familia" style="color: #000000;font-size: 16px;">
+                          <span class="familia" style="color: #000000;font-size: 20px;">
                             Reset your password
                           </span>
                         </div>
@@ -123,13 +121,15 @@
                           id="fieldset-1"
                           label="Email"
                           label-for="input-7" >
-                          <b-form-input id="input-7" v-model="login.password" maxlength="15" type="email"  trim></b-form-input>
+                          <b-form-input id="input-7"  maxlength="15" type="email"  trim></b-form-input>
                         </b-form-group>
                         <b-form-group>
                         </b-form-group>
                         <div class="row">
                           <div class="col-md-12 text-center">
-                            <button  class="col-md-12 text-center p-2 text-white pl-5 pr-5" style="border:none;border-radius: 3px;background: #0BC1BB;" >SEND ME RESET LINK</button>
+                            <button  class="col-md-12 text-center p-2 text-white pl-5 pr-5" 
+                            style="border:none;border-radius: 3px;background: #0BC1BB;"
+                            @click="newpass=true;reset=false;">SEND ME RESET LINK</button>
                           </div>
                         </div>
                     </b-card-body>
@@ -137,6 +137,240 @@
                   </b-card>
 
                </div>
+                <div v-if="newpass==true" class="col-md-12">
+                 <b-card
+                    tag="article"
+                    class="col-md-4 mb-2 ml-auto mr-auto"
+                    style="margin-top:6rem !important;">
+                    
+                      <template v-slot:header>
+                        <span class="mb-0 pull-right fa fa-times-circle" style="color: #CBCACA;cursor:pointer;" @click="reset=false;newpass=false;"></span>
+                      </template>
+                    <b-card-body>
+                      <div class="row">
+                        <div class="col-md-12 text-center">
+                          <span class="familia" style="color: #000000;font-size: 20px;">
+                            Enter new password
+                          </span>
+                        </div>
+                        <div class="col-md-12 text-center">
+                          <hr>
+                        </div>
+                      </div>
+                        <b-form-group
+                          id="fieldset-1"
+                          label="Email"
+                          label-for="input-7" >
+                          <b-form-input id="input-7"  maxlength="15" type="password"  trim></b-form-input>
+                        </b-form-group>
+                        <b-form-group>
+                        </b-form-group>
+                        <b-form-group
+                          id="fieldset-1"
+                          label="Email"
+                          label-for="input-7" >
+                          <b-form-input id="input-7"  maxlength="15" type="password"  trim></b-form-input>
+                        </b-form-group>
+                        <b-form-group>
+                        </b-form-group>
+                        <div class="row">
+                          <div class="col-md-12 text-center">
+                            <button  class="col-md-12 text-center p-2 text-white pl-5 pr-5"
+                             style="border:none;border-radius: 3px;background: #0BC1BB;" @click="reset=false;newpass=false;notifyVue('top', 'right','Password reset was successfull. Please log in.')">SET PASSWORD</button>
+                          </div>
+                        </div>
+                    </b-card-body>
+
+                  </b-card>
+
+               </div>
+                <div v-if="lg_screen_flags.bussiness_flag==true" class="col-md-12">
+                 <b-card
+                    tag="article"
+                    class="col-md-4 mb-2 ml-auto mr-auto"
+                    style="margin-top:6rem !important;">
+                    
+                      <template v-slot:header>
+                        <span class="mb-0 pull-right fa fa-times-circle" 
+                        style="color: #CBCACA;cursor:pointer;" ></span>
+                      </template>
+                    <b-card-body>
+                      <div class="row">
+                        <div class="col-md-12 text-center">
+                          <span class="familia" style="color: #000000;font-size: 20px;">
+                            Business Info
+                          </span>
+                        </div>
+                        <div class="col-md-12 text-center">
+                          <hr>
+                        </div>
+                      </div>
+                        <b-form-group
+                          id="fieldset-1"
+                          label="Business Name"
+                          label-for="input-7" >
+                          <b-form-input id="input-7"  maxlength="15" type="text"  trim></b-form-input>
+                        </b-form-group>
+                        <b-form-group>
+                        </b-form-group>
+                        <b-form-group
+                          id="fieldset-1"
+                          label="Business Type"
+                          label-for="input-7" >
+                          <b-form-input id="input-7"  maxlength="15" type="text"  trim></b-form-input>
+                        </b-form-group>
+                        <b-form-group>
+                        </b-form-group>
+                        <div class="row mt-5">
+                          <div class="col-md-6 text-center">
+                            <button  class="col-md-12 text-center p-2 text-white "
+                             style="border:none;border-radius: 3px;background: #0BC1BB;"
+                            >PREVIOUS</button>
+                          </div>
+                           <div class="col-md-6 text-center">
+                            <button  class="col-md-12 text-center p-2 text-white "
+                            @click="lg_screen_flags.bussiness_flag=false;lg_screen_flags.billing_flag=true"
+                             style="border:none;border-radius: 3px;background: #0BC1BB;" 
+                             >NEXT</button>
+                          </div>
+                        </div>
+                    </b-card-body>
+
+                  </b-card>
+
+                </div>
+                <div v-if="lg_screen_flags.billing_flag==true" class="col-md-12">
+                 <b-card
+                    tag="article"
+                    class="col-md-4 mb-2 ml-auto mr-auto"
+                    style="margin-top:6rem !important;">
+                      <template v-slot:header>
+                        <span class="mb-0 pull-right fa fa-times-circle" 
+                        style="color: #CBCACA;cursor:pointer;" ></span>
+                      </template>
+                    <b-card-body>
+                      <div class="row">
+                        <div class="col-md-12 text-center">
+                          <span class="familia" style="color: #000000;font-size: 20px;">
+                            Business Address
+                          </span>
+                        </div>
+                        <div class="col-md-12 text-center">
+                          <hr>
+                        </div>
+                      </div>
+                        <b-form-group
+                          id="fieldset-1"
+                          label="Street 1:"
+                          label-for="input-10" >
+                          <b-form-input id="input-10" placeholder="4472 Broad Street" maxlength="15" type="text"  trim></b-form-input>
+                        </b-form-group>
+                        <b-form-group
+                          id="fieldset-1"
+                          label="City:"
+                          label-for="input-11" >
+                          <b-form-input id="input-11" placeholder="Suite 160" maxlength="15" type="text"  trim></b-form-input>
+                        </b-form-group>
+                        <b-form-group
+                          id="fieldset-1"
+                          label="State:"
+                          label-for="input-11" >
+                          <b-form-input id="input-11" placeholder="CA" maxlength="15" type="text"  trim></b-form-input>
+                        </b-form-group>
+                        <b-form-group
+                          id="fieldset-1"
+                          label="Postal Code:"
+                          label-for="input-11" >
+                          <b-form-input id="input-11" placeholder="93401" maxlength="15" type="text"  trim></b-form-input>
+                        </b-form-group>
+                        <div class="row mt-5">
+                          <div class="col-md-6 text-center">
+                            <button  class="col-md-12 text-center p-2 text-white "
+                             style="border:none;border-radius: 3px;background: #0BC1BB;"
+                            @click="lg_screen_flags.bussiness_flag=true;lg_screen_flags.billing_flag=false"
+                            >PREVIOUS</button>
+                          </div>
+                           <div class="col-md-6 text-center">
+                            <button  class="col-md-12 text-center p-2 text-white "
+                            @click="lg_screen_flags.billing_flag=false;lg_screen_flags.payment_flag=true"
+                             style="border:none;border-radius: 3px;background: #0BC1BB;" 
+                             >NEXT</button>
+                          </div>
+                        </div>
+                    </b-card-body>
+                  </b-card>
+                </div>
+                <div v-if="lg_screen_flags.payment_flag==true" class="col-md-12">
+                 <b-card
+                    tag="article"
+                    class="col-md-4 mb-2 ml-auto mr-auto"
+                    style="margin-top:6rem !important;">
+                      <template v-slot:header>
+                        <span class="mb-0 pull-right fa fa-times-circle" 
+                        style="color: #CBCACA;cursor:pointer;" ></span>
+                      </template>
+                    <b-card-body>
+                      <div class="row">
+                        <div class="col-md-12 text-center">
+                          <span class="familia" style="color: #000000;font-size: 20px;">
+                            Payment Method
+                          </span>
+                        </div>
+                        <div class="col-md-12 text-center">
+                          <hr>
+                        </div>
+                      </div>
+                        <b-form-group
+                          id="fieldset-1"
+                          label="Name on Card:"
+                          label-for="input-10" >
+                          <b-form-input id="input-10" placeholder="Eric J.Walters" maxlength="15" type="text"  trim></b-form-input>
+                        </b-form-group>
+                        <b-form-group
+                          id="fieldset-1"
+                          label="New Card Number:"
+                          label-for="input-11" >
+                          <b-form-input id="input-11" placeholder="4566442009933032" maxlength="15" type="text"  trim></b-form-input>
+                        </b-form-group>
+                        <div class="row">
+                          <div class="col-md-6">
+                             <b-form-group
+                                id="fieldset-1"
+                                label="Postal Code:"
+                                label-for="input-11" >
+                                <b-form-input id="input-11" placeholder="93401" maxlength="15" type="text"  trim></b-form-input>
+                              </b-form-group>
+                          </div>
+                          <div class="col-md-6">
+                            <b-form-group
+                              id="fieldset-1"
+                              label="Expiration Date"
+                              label-for="input-18" >
+                              <b-form-input id="input-18" placeholder="DD/YY" maxlength="15" type="text"  trim></b-form-input>
+                            </b-form-group>
+                          </div>
+
+                        </div>
+                        <div class="row mt-5">
+                          <div class="col-md-6 text-center">
+                            <button  class="col-md-12 text-center p-2 text-white "
+                            @click="lg_screen_flags.billing_flag=true;lg_screen_flags.payment_flag=false"
+                             style="border:none;border-radius: 3px;background: #0BC1BB;"
+                            >PREVIOUS</button>
+                          </div>
+                           <div class="col-md-6 text-center">
+                             <router-link to="/dashboard">
+                            <button  class="col-md-12 text-center p-2 text-white "
+                             style="border:none;border-radius: 3px;background: #0BC1BB;" 
+                             >NEXT</button>
+                             </router-link>
+                          </div>
+                        </div>
+                    </b-card-body>
+
+                  </b-card>
+
+                </div>
 
            </div>
     </div>
@@ -145,28 +379,8 @@
 </template>
 <script>
 export default {
-    methods:{
-      validate_auth() {
-        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        console.log(re.test(this.login.email))
-        if(re.test(this.login.email)==false){
-          this.errors.email_error=true;
-        }        
-        else{
-          this.errors.email_error=false;
-
-        }
-        if(this.login.password.length<8){
-          this.errors.password_error=true
-        }
-        else{
-          this.errors.password_error=false
-
-        }
-
-      },
-    },
-     data() {
+  
+    data() {
       return {
         lg_screen_flags:{
           social_flag:false,
@@ -175,6 +389,7 @@ export default {
           payment_flag:false,
         },
         reset:false,
+        newpass:false,
         errors:{
           email_error:false,
           password_error:false
@@ -184,6 +399,55 @@ export default {
           password:''
         }
         
+      }
+    },
+   
+    methods:{
+       notifyVue (verticalAlign, horizontalAlign,msg) {
+        // const color = Math.floor((Math.random() * 4) + 1)
+        this.$notifications.notify(
+          {
+            message: `<span style='margin-left:2rem'>${msg}</span>`,
+            icon:'fa fa-check',
+            horizontalAlign: horizontalAlign,
+            verticalAlign: verticalAlign,
+            type: 'info'//this.type[color]
+          })
+      },
+      validate_auth() {
+        // var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        // console.log(re.test(this.login.email))
+        // if(re.test(this.login.email)==false){
+        //   this.errors.email_error=true;
+        // }        
+        // else{
+        //   this.errors.email_error=false;
+
+        // }
+        // if(this.login.password.length<8){
+        //   this.errors.password_error=true
+        // }
+        // else{
+        //   this.errors.password_error=false
+          this.lg_screen_flags.bussiness_flag=true
+          this.lg_screen_flags.billing_flag=false
+
+        // }
+
+      },
+    },
+    computed:{
+      main_auth(){
+        if(this.reset==false && 
+        this.newpass==false && 
+        this.lg_screen_flags.bussiness_flag==false && 
+        this.lg_screen_flags.billing_flag==false &&
+        this.lg_screen_flags.payment_flag==false){
+          return true
+        }
+        else{
+          return false
+        }
       }
     }
 }
