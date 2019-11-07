@@ -24,7 +24,9 @@ const routes = [
   {
     path: '/dashboard',
     component: DashboardLayout,
-    redirect: '/admin/overview'
+    redirect: '/admin/overview',
+    props:true,
+    name:'dashboard'
   },
   {
     path: '/',
@@ -34,10 +36,14 @@ const routes = [
     path: '/admin',
     component: DashboardLayout,
     redirect: '/admin/overview',
+    name:'dashboards',
+    props:true,
     children: [
       {
         path: 'overview',
         name: 'Overview',
+        name:'overview',
+        props:true,
         component: Categories
       },
       {
