@@ -44,7 +44,7 @@
 
                     </div>
                     <div class="col-md-4">
-                        <a href="#">SELECT></a>
+                        <a href="#">SELECT</a>
                     </div>
             </template>
             </b-card>
@@ -82,7 +82,7 @@
 
                     </div>
                     <div class="col-md-4">
-                        <a href="#">SELECT></a>
+                        <a href="#">SELECT</a>
                     </div>
             </template>
             </b-card>
