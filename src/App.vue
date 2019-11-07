@@ -9,6 +9,12 @@
   export default {}
 </script>
 <style lang="scss">
+label{
+  color: #6C6C6C !important;
+}
+// body{
+//   background-color:white !important;
+// }
 .content{
   padding: 0px 15px !important;
 
