@@ -143,10 +143,28 @@
 import VueDropzone from 'vue2-dropzone'
   import moment from 'moment'
 export default {
+    props:['title'],
+    created(){
+       console.log(this.title)
+       if(this.title=="logingin"){
+           this.notifyVue('top', 'right','Account creation was successfull. Browse our social post library and get posting!')
+       }
+    },
     components:{
         VueDropzone
     },
     methods:{
+        notifyVue (verticalAlign, horizontalAlign,msg) {
+        // const color = Math.floor((Math.random() * 4) + 1)
+        this.$notifications.notify(
+          {
+            message: `<span >${msg}</span>`,
+            icon:'fa fa-check',
+            horizontalAlign: horizontalAlign,
+            verticalAlign: verticalAlign,
+            type: 'info'//this.type[color]
+          })
+      },
         onFilePicked(event){
             let reader = new FileReader();
             reader.onload = (e) => {
