@@ -1,12 +1,24 @@
 <template>
-<div class="content">
+<div>
+   <div class="container-fluid bg-white p-2">
+      <div class="row">
+            <div class="col-md-12 text-center">
+              <img style="width:28vh"
+              src="https://s3-alpha-sig.figma.com/img/c959/4ba5/1d04d737769a35b10de28042c3912456?Expires=1574035200&Signature=HiIh3v8OdZ4T7ZopIiPGNkGEs9uuOpQtwEOfsrm8Qt~DH8GGx6PfdYuHVv42BbOj2lZl2Jrv4cxrE3uGl3sG~9xhaLU8wckfxS72azfu2QkZUVh6URXZi7mRLNIbGa9m5P-aaEmqw-gnslDTDvrzkKZtr9zz4vTMyFODymb2rEQVWRu8b-dKmeVSr4AVG-THjVw0CPQO1JEHcOK~o0S6JMTjarI50zqZusadv2IlGmFIFZZepR~lJE0Bpl-EJK9wtKHu8ftZzH~eNbRkXvvLE7jfD1GnzzotIl8jxkNR~lxT3pwYU6xqy9Ib8MwRNQV2DGHSHGUrqlbAXaEqfTlhBQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+               alt="">
+
+            </div>
+            
+          </div>
+   </div>
+   <div class="content">
     <div class="container-fluid" style="background-color:#F3F7FA;">
            <div class="row">
                <div v-if="main_auth" class="col-md-12">
                    <b-card
                     tag="article"
                     class="col-md-4 mb-2 ml-auto mr-auto"
-                    style="margin-top:6rem !important;">
+                    style="margin-top:4rem !important;">
                     <b-card-body>
                        <b-tabs content-class="mt-3" fill>
                           <b-tab title="Login" active>
@@ -101,7 +113,7 @@
                  <b-card
                     tag="article"
                     class="col-md-4 mb-2 ml-auto mr-auto"
-                    style="margin-top:6rem !important;">
+                    style="margin-top:4rem !important;">
                     
                       <template v-slot:header>
                         <span class="mb-0 pull-right fa fa-times-circle" style="color: #CBCACA;cursor:pointer;" @click="reset=false"></span>
@@ -141,7 +153,7 @@
                  <b-card
                     tag="article"
                     class="col-md-4 mb-2 ml-auto mr-auto"
-                    style="margin-top:6rem !important;">
+                    style="margin-top:4rem !important;">
                     
                       <template v-slot:header>
                         <span class="mb-0 pull-right fa fa-times-circle" style="color: #CBCACA;cursor:pointer;" @click="reset=false;newpass=false;"></span>
@@ -184,11 +196,78 @@
                   </b-card>
 
                </div>
-                <div v-if="lg_screen_flags.bussiness_flag==true" class="col-md-12">
+               <div v-if="lg_screen_flags.social_flag==true" class="col-md-12">
                  <b-card
                     tag="article"
                     class="col-md-4 mb-2 ml-auto mr-auto"
-                    style="margin-top:6rem !important;">
+                    style="margin-top:4rem !important;">
+                    
+                      <template v-slot:header>
+                        <span class="mb-0 pull-right fa fa-times-circle" 
+                        style="color: #CBCACA;cursor:pointer;" ></span>
+                      </template>
+                    <b-card-body>
+                      <div class="row">
+                        <div class="col-md-12 text-center">
+                          <span class="familia" style="color: #000000;font-size: 20px;">
+                            Link your social
+                          </span>
+                        </div>
+                        <div class="col-md-12 text-center">
+                          <hr>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-9 p-2" style="background-image: linear-gradient(#3B5998, #3B5998);">
+                          <span class="familia text-white"> <i class="fab fa-facebook-f"></i> FACEBOOK</span> 
+                        </div>
+                        <div class="col-md-3 p-2" style="background-color:#2E4779">
+                          <span class="familia text-white"> CONNECT </span>
+                        </div>  
+                      </div>  
+                      <div class="row mt-3">
+                        <div class="col-md-9 p-2" 
+                        style="background-image: linear-gradient(to right,#9F35B1 0%, #D72F7C 51%,#FA7D2D 100%);">
+                          <span class="familia text-white"> <i class="fab fa-instagram"></i> INSTAGRAM</span> 
+                        </div>
+                        <div class="col-md-3 p-2" style="background-image: linear-gradient(to right,#9F35B1 0%, #D72F7C 51%);">
+                          <span class="familia text-white"> CONNECT </span>
+                        </div>  
+                      </div>
+                      <div class="row mt-5">
+                        <div class="col-md-12" >
+                          <span class="familia" style="color:#6C6C6C;font-size: 16px;"> Connected Accounts</span> 
+                        </div> 
+                        <div class="col-md-2 mt-4" >
+                          <i style="font-size:2rem;color:#3B5998" class="fab fa-facebook-f"></i>
+                        </div>
+                        <div class="col-md-10 mt-4" >
+                          <span style="font-size:20px;color:#2C3943">Dr. Shawn Keller DDS</span>
+                       </div>
+                      </div>    
+                        <div class="row mt-5">
+                          <div class="col-md-6 text-center">
+                            <button  class="col-md-12 text-center p-2 text-white "
+                             style="border:none;border-radius: 3px;background: #0BC1BB;"
+                            >PREVIOUS</button>
+                          </div>
+                           <div class="col-md-6 text-center">
+                            <button  class="col-md-12 text-center p-2 text-white "
+                            @click="lg_screen_flags.bussiness_flag=true;lg_screen_flags.social_flag=false"
+                             style="border:none;border-radius: 3px;background: #0BC1BB;" 
+                             >NEXT</button>
+                          </div>
+                        </div>
+                    </b-card-body>
+
+                  </b-card>
+
+               </div>
+               <div v-if="lg_screen_flags.bussiness_flag==true" class="col-md-12">
+                 <b-card
+                    tag="article"
+                    class="col-md-4 mb-2 ml-auto mr-auto"
+                    style="margin-top:4rem !important;">
                     
                       <template v-slot:header>
                         <span class="mb-0 pull-right fa fa-times-circle" 
@@ -224,6 +303,7 @@
                         <div class="row mt-5">
                           <div class="col-md-6 text-center">
                             <button  class="col-md-12 text-center p-2 text-white "
+                            @click="lg_screen_flags.bussiness_flag=false;lg_screen_flags.social_flag=true"
                              style="border:none;border-radius: 3px;background: #0BC1BB;"
                             >PREVIOUS</button>
                           </div>
@@ -238,12 +318,12 @@
 
                   </b-card>
 
-                </div>
+               </div>
                 <div v-if="lg_screen_flags.billing_flag==true" class="col-md-12">
                  <b-card
                     tag="article"
                     class="col-md-4 mb-2 ml-auto mr-auto"
-                    style="margin-top:6rem !important;">
+                    style="margin-top:4rem !important;">
                       <template v-slot:header>
                         <span class="mb-0 pull-right fa fa-times-circle" 
                         style="color: #CBCACA;cursor:pointer;" ></span>
@@ -304,7 +384,7 @@
                  <b-card
                     tag="article"
                     class="col-md-4 mb-2 ml-auto mr-auto"
-                    style="margin-top:6rem !important;">
+                    style="margin-top:4rem !important;">
                       <template v-slot:header>
                         <span class="mb-0 pull-right fa fa-times-circle" 
                         style="color: #CBCACA;cursor:pointer;" ></span>
@@ -375,7 +455,7 @@
            </div>
     </div>
 </div>
-
+</div>
 </template>
 <script>
 export default {
@@ -429,8 +509,8 @@ export default {
         // }
         // else{
         //   this.errors.password_error=false
-          this.lg_screen_flags.bussiness_flag=true
-          this.lg_screen_flags.billing_flag=false
+          this.lg_screen_flags.social_flag=true
+          // this.lg_screen_flags.billing_flag=false
 
         // }
 
@@ -442,7 +522,8 @@ export default {
         this.newpass==false && 
         this.lg_screen_flags.bussiness_flag==false && 
         this.lg_screen_flags.billing_flag==false &&
-        this.lg_screen_flags.payment_flag==false){
+        this.lg_screen_flags.payment_flag==false &&
+        this.lg_screen_flags.social_flag==false){
           return true
         }
         else{
