@@ -18,12 +18,17 @@ import StarredPosts from 'src/pages/StarredPosts.vue'
 import UpcomingPosts from 'src/pages/UpcomingPosts.vue'
 import PreviouslyPosted from 'src/pages/PreviouslyPosted.vue'
 import Drafts from 'src/pages/Drafts.vue'
+import Login from 'src/pages/Login.vue'
 
 const routes = [
   {
-    path: '/',
+    path: '/dashboard',
     component: DashboardLayout,
     redirect: '/admin/overview'
+  },
+  {
+    path: '/',
+    component: Login,
   },
   {
     path: '/admin',
