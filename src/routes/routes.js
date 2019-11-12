@@ -20,6 +20,10 @@ import PreviouslyPosted from 'src/pages/PreviouslyPosted.vue'
 import Drafts from 'src/pages/Drafts.vue'
 import Login from 'src/pages/Login.vue'
 import AccountInfo from 'src/pages/AccountInfo.vue'
+import Users from 'src/pages/Users.vue'
+import AddNewUser from 'src/pages/AddNewUser.vue'
+import EditUser from 'src/pages/EditUser.vue'
+import SocialAccounts from 'src/pages/SocialAccounts.vue'
 
 const routes = [
   {
@@ -51,6 +55,26 @@ const routes = [
         path: 'account-info',
         name: 'AccountInfo',
         component: AccountInfo
+      },
+      {
+        path: 'users',
+        name: 'Users',
+        component: Users
+      },
+      {
+        path: 'new-user',
+        name: 'AddNewUser',
+        component: AddNewUser
+      },
+      {
+        path: 'edit-user',
+        name: 'EditUser',
+        component: EditUser
+      },
+      {
+        path: 'social-accounts',
+        name: 'SocialAccounts',
+        component: SocialAccounts
       },
       {
         path: 'category-details',
