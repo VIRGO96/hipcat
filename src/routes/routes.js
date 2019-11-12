@@ -19,6 +19,7 @@ import UpcomingPosts from 'src/pages/UpcomingPosts.vue'
 import PreviouslyPosted from 'src/pages/PreviouslyPosted.vue'
 import Drafts from 'src/pages/Drafts.vue'
 import Login from 'src/pages/Login.vue'
+import AccountInfo from 'src/pages/AccountInfo.vue'
 
 const routes = [
   {
@@ -45,6 +46,11 @@ const routes = [
         name:'overview',
         props:true,
         component: Categories
+      },
+      {
+        path: 'account-info',
+        name: 'AccountInfo',
+        component: AccountInfo
       },
       {
         path: 'category-details',
