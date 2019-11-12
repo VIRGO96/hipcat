@@ -1,5 +1,5 @@
 <template>
-<div>
+<div id="op">
    <div class="container-fluid bg-white p-2">
       <div class="row">
             <div class="col-md-12 text-center">
@@ -18,7 +18,7 @@
                    <b-card
                     tag="article"
                     class="col-md-4 mb-2 ml-auto mr-auto"
-                    style="margin-top:4rem !important;">
+                    style="margin-top:2rem !important;">
                     <b-card-body>
                        <b-tabs content-class="mt-3" fill>
                           <b-tab title="Login" active>
@@ -113,7 +113,7 @@
                  <b-card
                     tag="article"
                     class="col-md-4 mb-2 ml-auto mr-auto"
-                    style="margin-top:4rem !important;">
+                    style="margin-top:2rem !important;">
                     
                       <template v-slot:header>
                         <span class="mb-0 pull-right fa fa-times-circle" style="color: #CBCACA;cursor:pointer;" @click="reset=false"></span>
@@ -153,7 +153,7 @@
                  <b-card
                     tag="article"
                     class="col-md-4 mb-2 ml-auto mr-auto"
-                    style="margin-top:4rem !important;">
+                    style="margin-top:2rem !important;">
                     
                       <template v-slot:header>
                         <span class="mb-0 pull-right fa fa-times-circle" style="color: #CBCACA;cursor:pointer;" @click="reset=false;newpass=false;"></span>
@@ -200,7 +200,7 @@
                  <b-card
                     tag="article"
                     class="col-md-4 mb-2 ml-auto mr-auto"
-                    style="margin-top:4rem !important;">
+                    style="margin-top:2rem !important;">
                     
                       <template v-slot:header>
                         <span class="mb-0 pull-right fa fa-times-circle" 
@@ -267,7 +267,7 @@
                  <b-card
                     tag="article"
                     class="col-md-4 mb-2 ml-auto mr-auto"
-                    style="margin-top:4rem !important;">
+                    style="margin-top:2rem !important;">
                     
                       <template v-slot:header>
                         <span class="mb-0 pull-right fa fa-times-circle" 
@@ -323,7 +323,7 @@
                  <b-card
                     tag="article"
                     class="col-md-4 mb-2 ml-auto mr-auto"
-                    style="margin-top:4rem !important;">
+                    style="margin-top:2rem !important;">
                       <template v-slot:header>
                         <span class="mb-0 pull-right fa fa-times-circle" 
                         style="color: #CBCACA;cursor:pointer;" ></span>
@@ -384,7 +384,7 @@
                  <b-card
                     tag="article"
                     class="col-md-4 mb-2 ml-auto mr-auto"
-                    style="margin-top:4rem !important;">
+                    style="margin-top:2rem !important;">
                       <template v-slot:header>
                         <span class="mb-0 pull-right fa fa-times-circle" 
                         style="color: #CBCACA;cursor:pointer;" ></span>
@@ -495,24 +495,24 @@ export default {
           })
       },
       validate_auth() {
-        // var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        // console.log(re.test(this.login.email))
-        // if(re.test(this.login.email)==false){
-        //   this.errors.email_error=true;
-        // }        
-        // else{
-        //   this.errors.email_error=false;
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        console.log(re.test(this.login.email))
+        if(re.test(this.login.email)==false){
+          this.errors.email_error=true;
+        }        
+        else{
+          this.errors.email_error=false;
 
-        // }
-        // if(this.login.password.length<8){
-        //   this.errors.password_error=true
-        // }
-        // else{
-        //   this.errors.password_error=false
+        }
+        if(this.login.password.length<8){
+          this.errors.password_error=true
+        }
+        else{
+          this.errors.password_error=false
           this.lg_screen_flags.social_flag=true
           // this.lg_screen_flags.billing_flag=false
 
-        // }
+        }
 
       },
     },
@@ -533,9 +533,12 @@ export default {
     }
 }
 </script>
-<style>
+<style scoped>
 body{
   background: #F3F7FA !important;
 }
+html, body {margin: 0; height: 100% !important; overflow: hidden !important}
+
+#op{margin: 0; height: 100% !important; overflow: hidden !important}
 </style>
 
