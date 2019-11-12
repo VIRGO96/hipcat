@@ -33,7 +33,9 @@
                             Visa*************1234
                         </span>
                 </b-form-group>
-                <span style="color: #0BC1BB;text-decoration:underline;" class="familia"> UPDATE BILLING INFO</span>
+                <router-link to="/admin/update-billing">
+                    <span style="color: #0BC1BB;text-decoration:underline;" class="familia"> UPDATE BILLING INFO</span>
+                </router-link>
                 <b-form-group
                 class="mt-3"
                         id="fieldset-1"
@@ -83,7 +85,7 @@
                                 <span>$50.00</span>
                             </div>
                         </div> 
-                                                <div class="row p-2 mt-2" style="background: #F3F7FA;">
+                        <div class="row p-2 mt-2" style="background: #F3F7FA;">
                             <div class="col-md-6">
                                 <span>08/03/2019</span>
                             </div>
@@ -173,11 +175,9 @@
 export default {
     methods:{
         saver(){
-            this.notifyVue('top', 'right','Account Information has been updated')
-            this.notifyVue('top', 'right','Your password has been updated')
+            this.notifyVue('top', 'right','Payment Mehtod has been updated')
         },
         notifyVue (verticalAlign, horizontalAlign,msg) {
-        // const color = Math.floor((Math.random() * 4) + 1)
         this.$notifications.notify(
           {
             message: `<span >${msg}</span>`,
