@@ -24,6 +24,8 @@ import Users from 'src/pages/Users.vue'
 import AddNewUser from 'src/pages/AddNewUser.vue'
 import EditUser from 'src/pages/EditUser.vue'
 import SocialAccounts from 'src/pages/SocialAccounts.vue'
+import Billing from 'src/pages/Billing.vue'
+import UpdateBilling from 'src/pages/UpdateBilling.vue'
 
 const routes = [
   {
@@ -75,6 +77,16 @@ const routes = [
         path: 'social-accounts',
         name: 'SocialAccounts',
         component: SocialAccounts
+      },
+      {
+        path: 'billing',
+        name: 'Billing',
+        component: Billing
+      },
+      {
+        path: 'update-billing',
+        name: 'UpdateBilling',
+        component: UpdateBilling
       },
       {
         path: 'category-details',
