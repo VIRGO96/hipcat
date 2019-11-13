@@ -15,7 +15,7 @@
         <div class="row">
             <div class="col-md-12">
                 <b-card
-                    img-src="https://s3-alpha-sig.figma.com/img/d4a2/83f6/8c10f9dcd0484b7b4b4214e25de39413?Expires=1573430400&Signature=Az01AY1SMZ4e~nzMQZsaixGFpii1~ACC~bKpE55lZ-kr~O~X69h-QtJEtdMfdgLCle7ojykCZJ19RHZTv9a7e5nyX8r7RpQfFMWAvpdgXxK5SbtyetR0WpjQ1jIJyvGXjfgq-qJTG97rDLOUiB9eSLe9PZYufdX1EUh7LhuAYzkHIStkorubU9p2YJ8AG~YmnLtDCJZZWN4w5VwM9XqfXcybaUPFayxTcW40GHB1TrCwB~b51Bzhflrhk8DBoBST9w6ndVpktKEi5Ffy7nEuh5pbgFCrbamnvi1~uNukV0NSV1v6e9zrHAB~~OkDO3xRBDmIbBlKihPA28tqKDkoEw__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+                    img-src="img/smile.png"
                     img-alt="Image"
                     img-width="20%"
                     img-height="180rem"
@@ -77,7 +77,7 @@
             </div>
             <div class="col-md-12">
                 <b-card
-                    img-src="https://s3-alpha-sig.figma.com/img/d4a2/83f6/8c10f9dcd0484b7b4b4214e25de39413?Expires=1573430400&Signature=Az01AY1SMZ4e~nzMQZsaixGFpii1~ACC~bKpE55lZ-kr~O~X69h-QtJEtdMfdgLCle7ojykCZJ19RHZTv9a7e5nyX8r7RpQfFMWAvpdgXxK5SbtyetR0WpjQ1jIJyvGXjfgq-qJTG97rDLOUiB9eSLe9PZYufdX1EUh7LhuAYzkHIStkorubU9p2YJ8AG~YmnLtDCJZZWN4w5VwM9XqfXcybaUPFayxTcW40GHB1TrCwB~b51Bzhflrhk8DBoBST9w6ndVpktKEi5Ffy7nEuh5pbgFCrbamnvi1~uNukV0NSV1v6e9zrHAB~~OkDO3xRBDmIbBlKihPA28tqKDkoEw__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+                    img-src="img/smile.png"
                     img-alt="Image"
                     img-width="20%"
                     img-height="180rem"
