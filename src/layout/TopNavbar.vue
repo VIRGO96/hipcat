@@ -32,21 +32,25 @@
             <a class="dropdown-item" href="#">Notification 4</a>
             <a class="dropdown-item" href="#">Another notification</a>
           </base-dropdown> -->
+          <router-link to="social-accounts?active=settings">
           <li class="nav-item">
             <a href="#" class="nav-link">
               <span class="d-lg-block">&nbsp;<i class="fas fa-user"></i> Social Media</span>
             </a>
           </li>
+          </router-link>
           <li class="nav-item ml-4">
             <a href="#" class="nav-link">
               <span class="d-lg-block">&nbsp; <i class="far fa-calendar-alt"></i> Calendar</span>
             </a>
           </li>
+          <router-link to="overview?active=dashboard">
           <li class="nav-item ml-4">
             <a href="#" class="nav-link">              
               <span class="d-lg-block">&nbsp;<i class="fas fa-tachometer-alt"></i> Dashboard</span>
             </a>
           </li>
+          </router-link>
           <li class="nav-item ml-4">
             <a href="#" class="nav-link">
               <span class="d-lg-block">&nbsp; <i class="fas fa-atom"></i> Digital Coach</span>
@@ -59,11 +63,13 @@
           </li>
         </ul>
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
+          <router-link to="account-info?active=settings">
+          <li class="nav-item" @click="account">
             <a class="nav-link" href="#">
               <img src="../assets/img/profile.png" style="height:26px;width:26px;" alt="">
             </a>
           </li>
+          </router-link>
           <!-- <base-dropdown title="Dropdown">
             <a class="dropdown-item" href="#">Action</a>
             <a class="dropdown-item" href="#">Another action</a>
@@ -97,6 +103,12 @@
       }
     },
     methods: {
+      account(){
+
+        // localStorage.setItem("options","account")
+        // console.log("came")
+        // console.log(localStorage.getItem("options"))
+      },
       capitalizeFirstLetter (string) {
         return string.charAt(0).toUpperCase() + string.slice(1)
       },

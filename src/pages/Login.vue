@@ -439,7 +439,7 @@
                             >PREVIOUS</button>
                           </div>
                            <div class="col-md-6 text-center">
-                             <router-link  :to="{ name: 'overview', params: { title: 'logingin' }}">
+                             <router-link  :to="{ path: '/admin/overview?active=dashboard&newlogin=yes', params: { title: 'logingin' }}">
                             <button  class="col-md-12 text-center p-2 text-white "
                              style="border:none;border-radius: 3px;background: #0BC1BB;" 
                              >NEXT</button>

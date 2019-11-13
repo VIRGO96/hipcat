@@ -39,7 +39,7 @@
                  <span class="fonts">10</span>
             </div>
              <div class="col-md-3">
-                <router-link to="/admin/edit-user">
+                <router-link to="/admin/edit-user?active=settings">
                 <span class="ml-3 pull-right fonts familia"  style="color:#089D9B">EDIT ></span>
                 </router-link>
             </div>
@@ -55,7 +55,7 @@
                  <span class="fonts">10</span>
             </div>
              <div class="col-md-3">
-                <router-link to="/admin/edit-user">
+                <router-link to="/admin/edit-user?active=settings">
                     <span class="ml-3 pull-right fonts familia"  style="color:#089D9B">EDIT ></span>
                 </router-link>
                 <span class=" pull-right fonts familia" style="color:red;cursor:pointer;" v-b-modal.modal-2>DELETE</span>
@@ -73,7 +73,7 @@
                  <span class="fonts">2</span>
             </div>
              <div class="col-md-3">
-                 <router-link to="/admin/edit-user">
+                 <router-link to="/admin/edit-user?active=settings">
                 <span class="ml-3 pull-right fonts familia"  style="color:#089D9B">EDIT ></span>
                  </router-link>
                 <span class=" pull-right fonts familia" style="color:red;cursor:pointer;" v-b-modal.modal-2>DELETE</span>
@@ -98,7 +98,7 @@
 export default {
     methods:{
         redirect(){
-            this.$router.push({path:'/admin/new-user'})
+            this.$router.push({path:'/admin/new-user?active=settings'})
             // this.notifyVue('top', 'right','Account Information has been updated')
             // this.notifyVue('top', 'right','Your password has been updated')
         },
