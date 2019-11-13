@@ -2,21 +2,37 @@
   <div class="wrapper">
     <side-bar>
       <mobile-menu slot="content"></mobile-menu>
-      <sidebar-link to="/admin/overview">
+      <sidebar-link v-if="active_view=='settings'" to="/admin/account-info?active=settings">
+        <p>Account Info</p>
+      </sidebar-link>
+      <sidebar-link v-if="active_view=='settings'" to="/admin/users?active=settings">
+        <p>Users</p>
+      </sidebar-link>
+      <sidebar-link v-if="active_view=='settings'" to="/admin/social-accounts?active=settings">
+        <p>Social Account</p>
+      </sidebar-link>
+      <sidebar-link v-if="active_view=='settings'" to="/admin/billing?active=settings">
+        <p>Billing</p>
+      </sidebar-link>
+      <sidebar-link v-if="active_view=='dashboard'" to="/admin/overview?active=dashboard">
         <p>Categories</p>
       </sidebar-link>
-      <sidebar-link to="/admin/starred-posts">
+      <sidebar-link v-if="active_view=='dashboard'" to="/admin/starred-posts?active=dashboard">
         <p>Starred Posts</p>
       </sidebar-link>
-      <sidebar-link to="/admin/drafts">
+      <sidebar-link v-if="active_view=='dashboard'" to="/admin/drafts?active=dashboard">
         <p>Drafts</p>
       </sidebar-link>
-      <sidebar-link to="/admin/upcoming-posts">
+      <sidebar-link v-if="active_view=='dashboard'" to="/admin/upcoming-posts?active=dashboard">
         <p>Upcoming Posts</p>
       </sidebar-link>
-      <sidebar-link to="/admin/previously-posted">
+      <sidebar-link v-if="active_view=='dashboard'" to="/admin/previously-posted?active=dashboard">
         <p>Previously Posted</p>
       </sidebar-link>
+      <!-- <sidebar-link to="/admin/notifications">
+        <i class="nc-icon nc-bell-55"></i>
+        <p>Notifications</p>
+      </sidebar-link> -->
       <!-- <sidebar-link to="/admin/user">
         <i class="nc-icon nc-circle-09"></i>
         <p>User Profile</p>
@@ -65,6 +81,7 @@
 
 </style>
 <script>
+
   import TopNavbar from './TopNavbar.vue'
   import ContentFooter from './ContentFooter.vue'
   import DashboardContent from './Content.vue'
@@ -75,6 +92,22 @@
       ContentFooter,
       DashboardContent,
       MobileMenu
+    },
+    data(){
+      return{
+        ops:'dashboard'
+      }
+    },
+    computed:{
+      // active_view(){
+        // console.log(localStorage.getItem("options"))
+      //   this.ops=localStorage.getItem("options")
+      //   return localStorage.getItem("options")
+      // },
+      active_view(){
+        console.log(this.$route.query.active) // outputs 'yay'
+        return this.$route.query.active
+      }
     },
     methods: {
       toggleSidebar () {

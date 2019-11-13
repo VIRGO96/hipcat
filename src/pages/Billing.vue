@@ -33,7 +33,7 @@
                             Visa*************1234
                         </span>
                 </b-form-group>
-                <router-link to="/admin/update-billing">
+                <router-link to="/admin/update-billing?active=settings">
                     <span style="color: #0BC1BB;text-decoration:underline;" class="familia"> UPDATE BILLING INFO</span>
                 </router-link>
                 <b-form-group
