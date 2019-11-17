@@ -39,11 +39,13 @@
             </a>
           </li>
           </router-link>
+          <router-link to="social-calendar?active=calendar">
           <li class="nav-item ml-4">
             <a href="#" class="nav-link">
               <span class="d-lg-block">&nbsp; <i class="far fa-calendar-alt"></i> Calendar</span>
             </a>
           </li>
+          </router-link>
           <router-link to="overview?active=dashboard">
           <li class="nav-item ml-4">
             <a href="#" class="nav-link">              
