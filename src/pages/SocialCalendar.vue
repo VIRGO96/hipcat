@@ -1,7 +1,7 @@
 <template>
 <div class="content">
     <div class="container-fluid" style="background-color:white;">
-        <b-modal id="modal-4" size="lg">
+        <b-modal id="modal-8" size="lg">
             <template v-slot:modal-title>
                   <div>
                    <h5>New Post > Post Library </h5>
@@ -33,10 +33,10 @@
                 </div> -->
             </b-container>
         </b-modal>
-        <b-modal id="modal-1" >
+        <b-modal id="modal-7" >
             <template v-slot:modal-title>
                   <div>
-                   <h5>New Post  <span  class="ml-2 ex2 fa fa-book"></span> <span class="ex2 familia" style="cursor:pointer;text-decoration-line: underline;" v-b-modal.modal-4> POST LIBRARY</span> </h5>
+                   <h5>New Post  <span  class="ml-2 ex2 fa fa-book"></span> <span class="ex2 familia" style="cursor:pointer;text-decoration-line: underline;" v-b-modal.modal-8> POST LIBRARY</span> </h5>
                   </div>
             </template>
             <b-container>
@@ -115,17 +115,48 @@
 
             </b-container>
               <template v-slot:modal-footer>
-                <div class="w-100">
-                <select class="ml-3 float-right col-md-4" style="padding:0.3rem;background: linear-gradient(258.19deg, #089D9B 0%, #0BC1BB 100%);color:white;">
-                    <option style="background: #2C3943;color:white;" val="POST NOW">POST NOW</option>
-                    <option style="background: #2C3943;color:white;" val="SAVE AS DRAFT">SAVE AS DRAFT</option>
-                </select>
-                    <a-date-picker class="float-right col-md-6"
-                    placeholder="SCHEDULE FOR LATER"
-                    format="YYYY-MM-DD HH:mm"
-                    :showTime="{ defaultValue: moment('00:00:00', 'HH:mm:ss') }"
-                    />
-                </div>
+                <a-date-picker 
+                        class="float-right col-6 col-md-6 d-none d-block d-xl-none d-lg-none d-md-none"
+                        placeholder="SCHEDULE LATER"
+                        format="YYYY-MM-DD HH:mm"
+                        :showTime="{ defaultValue: moment('00:00:00', 'HH:mm:ss') }"
+
+                        />
+                        <select class=" d-none d-block d-xl-none d-lg-none d-md-none ml-3  " style="padding:0.3rem;background: linear-gradient(258.19deg, #089D9B 0%, #0BC1BB 100%);color:white;">
+                        <option style="background: #2C3943;color:white;" val="POST NOW">POST NOW</option>
+                        <option style="background: #2C3943;color:white;" val="SAVE AS DRAFT">SAVE AS DRAFT</option>
+                    </select>
+                        
+                       
+                    <div class="w-100 ">
+                    
+                    <select class="d-none d-md-flex ml-3 button-margins float-right col-md-4" style="padding:0.3rem;background: linear-gradient(258.19deg, #089D9B 0%, #0BC1BB 100%);color:white;">
+                        <option style="background: #2C3943;color:white;" val="POST NOW">POST NOW</option>
+                        <option style="background: #2C3943;color:white;" val="SAVE AS DRAFT">SAVE AS DRAFT</option>
+                    </select>
+                    <a-date-picker class="float-right col-md-6 d-none d-md-block"
+                        placeholder="SCHEDULE FOR LATER"
+                        format="YYYY-MM-DD HH:mm"
+                        :showTime="{ defaultValue: moment('00:00:00', 'HH:mm:ss') }"
+
+                        />
+
+                    <!-- <select class="ml-3 button-margins float-right col-md-4" style="padding:0.3rem;background: linear-gradient(258.19deg, #089D9B 0%, #0BC1BB 100%);color:white;">
+                        <option style="background: #2C3943;color:white;" val="POST NOW">POST NOW</option>
+                        <option style="background: #2C3943;color:white;" val="SAVE AS DRAFT">SAVE AS DRAFT</option>
+                    </select>
+                        <a-date-picker class="float-right col-12 col-md-12"
+                        placeholder="SCHEDULE FOR LATER"
+                        format="YYYY-MM-DD HH:mm"
+                        :showTime="{ defaultValue: moment('00:00:00', 'HH:mm:ss') }"
+
+                        /> -->
+                        <!-- <p id="tooltip-button-variant" class="float-right familia mt-2" 
+                        style="cursor:pointer;text-decoration-line: underline;font-size:16px;color: #2C3943;"> 
+                        <span   class="fa fa-calendar">
+                            </span> SCHEDULE FOR LATER
+                        </p> -->
+                    </div>
             </template>
         </b-modal>
         <div class="row">
@@ -143,7 +174,7 @@
                 <b-form-checkbox >Show Holidays</b-form-checkbox>
             </div>
             <div  class="col-md-6 mt-3">
-                <button v-b-modal.modal-1 style="border:none;background: linear-gradient(263.4deg, #089D9B 0%, #0BC1BB 100%);" class="btn btn-fill pull-right"><span style="color:white;" class="fa fa-plus"></span> NEW POST</button>
+                <button v-b-modal.modal-7 style="border:none;background: linear-gradient(263.4deg, #089D9B 0%, #0BC1BB 100%);" class="btn btn-fill pull-right"><span style="color:white;" class="fa fa-plus"></span> NEW POST</button>
             </div>
         </div>
         <hr style="border:1px solid #CBCACA">
@@ -163,7 +194,7 @@
                         <a-icon type="ellipsis" style="transform: rotate(90deg);"/> </a>
                         <a-menu slot="overlay">
                           <a-menu-item>
-                            <a href="javascript:;" v-b-modal.modal-1>Edit</a>
+                            <a href="javascript:;" v-b-modal.modal-7>Edit</a>
                           </a-menu-item>
                           <a-menu-item>
                             <a href="javascript:;">Delete</a>
@@ -264,7 +295,7 @@ export default {
             link:'appointment.png'
             },
             {name:'Community',
-            link:'community.png'
+            link:'community.jpg'
             },
             {name:'Contest',
             link:'context.png'
@@ -317,7 +348,7 @@ export default {
 }
 }
 </script>
-<style>
+<style scoped>
 #modal-2___BV_modal_content_{
 background: #0BC1BB;
 box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.3);
@@ -356,11 +387,9 @@ background:#EAF1F4 !important
   .dropdown-toggle::after {
     display: none !important;
 }
-
 .modal-dialog {
-    margin: -20vh auto 0px auto
+    /* margin: -20vh auto 0px auto !important */
 }
-
 span.ex2 {display: inline;}
 
 </style>
