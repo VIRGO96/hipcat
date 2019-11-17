@@ -14,6 +14,9 @@
       <sidebar-link v-if="active_view=='settings'" to="/admin/billing?active=settings">
         <p>Billing</p>
       </sidebar-link>
+      <sidebar-link v-if="active_view=='calendar'" to="/admin/social-calendar?active=calendar">
+        <p>Social Calendar</p>
+      </sidebar-link>
       <sidebar-link v-if="active_view=='dashboard'" to="/admin/overview?active=dashboard">
         <p>Categories</p>
       </sidebar-link>
