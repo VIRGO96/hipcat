@@ -6,7 +6,7 @@
                 <p  style="font-size:24px;font-weight:100;color:#2C3943">Upcoming Posts</p>
             </div>
             <div class="col-md-8 mt-3">
-                <b-form-select style="background:#EAF1F4" class="col-md-3 pull-right mr-3" v-model="selected" :options="options"></b-form-select>
+                <b-form-select style="background:#EAF1F4" class="button-margins col-md-3 pull-right mr-3" v-model="selected" :options="options"></b-form-select>
                 <b-form-select style="background:#EAF1F4" class="col-md-3 pull-right mr-3" v-model="selected2" :options="options2"></b-form-select>
 
             </div>
@@ -29,7 +29,13 @@
                     </b-card-text>
                        <hr style="border: 1px solid #B6C8D6;margin-top:4rem" > 
                     <div class="row" style="margin-top:1rem" >
-                    <div class="col-md-5">
+                    <div class="col-12 col-md-5 d-none d-md-flex">
+                        <span style="display:block;">
+                            <i class="fa fa-calendar" style="color:#93A3AF;"></i>
+                            <span class="text-muted" style="color:#93A3AF;font-size: 13px;font-family: Monteserrat;">This post is schedlued for: Tommorow @ 12:30pm</span>
+                        </span>
+                    </div>
+                    <div class="col-12 col-md-5 pl-0 d-none d-block d-xl-none d-lg-none d-md-none">
                         <span style="display:block;">
                             <i class="fa fa-calendar" style="color:#93A3AF;"></i>
                             <span class="text-muted" style="color:#93A3AF;font-size: 13px;font-family: Monteserrat;">This post is schedlued for: Tommorow @ 12:30pm</span>
@@ -63,7 +69,11 @@
                     <div class="col-md-1 mt-1 mr-2 text-center">
                         <h5 class="pull-right familia" style="font-size:13px;color:blue;">EDIT</h5>
                     </div>
-                    <div class="col-md-1.5  mt-1 text-center">
+                    
+                    <div class="col-md-1.5 d-none d-md-flex  mt-1 text-center">
+                        <h5 class="pull-right familia" style="font-size:13px;color:blue;">POST NOW</h5>
+                    </div>
+                    <div class="col-md-12 d-none d-block d-xl-none d-lg-none d-md-none  mt-1 text-center">
                         <h5 class="pull-right familia" style="font-size:13px;color:blue;">POST NOW</h5>
                     </div>
                     </div>
@@ -91,7 +101,13 @@
                     </b-card-text>
                        <hr style="border: 1px solid #B6C8D6;margin-top:4rem" > 
                     <div class="row" style="margin-top:1rem" >
-                    <div class="col-md-5">
+                    <div class="col-12 col-md-5 d-none d-md-flex">
+                        <span style="display:block;">
+                            <i class="fa fa-calendar" style="color:#93A3AF;"></i>
+                            <span class="text-muted" style="color:#93A3AF;font-size: 13px;font-family: Monteserrat;">This post is schedlued for: Tommorow @ 12:30pm</span>
+                        </span>
+                    </div>
+                    <div class="col-12 col-md-5 pl-0 d-none d-block d-xl-none d-lg-none d-md-none">
                         <span style="display:block;">
                             <i class="fa fa-calendar" style="color:#93A3AF;"></i>
                             <span class="text-muted" style="color:#93A3AF;font-size: 13px;font-family: Monteserrat;">This post is schedlued for: Tommorow @ 12:30pm</span>
@@ -115,7 +131,10 @@
                     <div class="col-md-1 mt-1 mr-2 text-center">
                         <h5 class="pull-right familia" style="font-size:13px;color:blue;">EDIT</h5>
                     </div>
-                    <div class="col-md-1.5  mt-1 text-center">
+                    <div class="col-md-1.5 d-none d-md-flex  mt-1 text-center">
+                        <h5 class="pull-right familia" style="font-size:13px;color:blue;">POST NOW</h5>
+                    </div>
+                    <div class="col-md-12 d-none d-block d-xl-none d-lg-none d-md-none  mt-1 text-center">
                         <h5 class="pull-right familia" style="font-size:13px;color:blue;">POST NOW</h5>
                     </div>
                     </div>
