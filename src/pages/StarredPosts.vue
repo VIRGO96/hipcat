@@ -26,24 +26,16 @@
 
                 </div>
                 <template v-slot:footer class="p-0">
-                    <div class="col-md-3 pl-0 pr-0 text-muted">
-                    <span style="display:block;">
-                    <span>Image</span>
-                    <i class="fa fa-picture-o"></i>
-                    </span>
+                    <div class="col-md-12 text-muted">
+                        
+                        <span style="display:inline;">                   
+                            <span>Image</span><i class="fa fa-picture-o"></i> 
+                            <span class="ml-4">Calendar</span><i class="fa fa-calendar"></i>
+                            <a class="ml-4" href="#">SELECT</a>
 
+                        </span>
                     </div>
-                    <div class="col-md-4 text-muted pl-0 pr-0">
-                    <span style="display:block;">
-                    <span>Calendar</span>
-                    <i class="fa fa-calendar"></i>
-                    </span>
-
-                    </div>
-                    <div class="col-md-4">
-                        <a href="#">SELECT</a>
-                    </div>
-            </template>
+                </template>
             </b-card>
             </div>
              <div class="col-md-4">
@@ -64,22 +56,14 @@
 
                 </div>
                 <template v-slot:footer class="p-0">
-                    <div class="col-md-3 pl-0 pr-0 text-muted">
-                    <span style="display:block;">
-                    <span>Image</span>
-                    <i class="fa fa-picture-o"></i>
-                    </span>
+                   <div class="col-md-12 text-muted">
+                        
+                        <span style="display:inline;">                   
+                            <span>Image</span><i class="fa fa-picture-o"></i> 
+                            <span class="ml-4">Calendar</span><i class="fa fa-calendar"></i>
+                            <a class="ml-4" href="#">SELECT</a>
 
-                    </div>
-                    <div class="col-md-4 text-muted pl-0 pr-0">
-                    <span style="display:block;">
-                    <span>Calendar</span>
-                    <i class="fa fa-calendar"></i>
-                    </span>
-
-                    </div>
-                    <div class="col-md-4">
-                        <a href="#">SELECT</a>
+                        </span>
                     </div>
             </template>
             </b-card>
