@@ -1,7 +1,7 @@
 <template>
 <div class="content">
     <div class="container-fluid" style="background-color:white;">
-            <b-modal id="modal-1" title="New Post" style="margin-top:-140px;">
+            <b-modal id="modal-8" title="New Post" style="margin-top:-140px;">
                 <b-container>
                     <div class="row">
                         <div class="col-md-12 pr-0 pl-0">
@@ -85,24 +85,42 @@
 
                 </b-container>
                  <template v-slot:modal-footer>
-                    <div class="w-100">
-                        <!-- <a-select defaultValue="lucy" style="width: 120px" @change="handleChange">
-                    <a-select-option value="jack">Jack</a-select-option>
-                    <a-select-option value="lucy">Lucy</a-select-option>
-                    <a-select-option value="disabled" disabled>Disabled</a-select-option>
-                    <a-select-option value="Yiminghe">yiminghe</a-select-option>
-                    </a-select> -->
-                    <select class="ml-3 float-right col-md-4" style="padding:0.3rem;background: linear-gradient(258.19deg, #089D9B 0%, #0BC1BB 100%);color:white;">
+                        <a-date-picker 
+                        class="float-right col-6 col-md-6 d-none d-block d-xl-none d-lg-none d-md-none"
+                        placeholder="SCHEDULE LATER"
+                        format="YYYY-MM-DD HH:mm"
+                        :showTime="{ defaultValue: moment('00:00:00', 'HH:mm:ss') }"
+
+                        />
+                        <select class=" d-none d-block d-xl-none d-lg-none d-md-none ml-3  " style="padding:0.3rem;background: linear-gradient(258.19deg, #089D9B 0%, #0BC1BB 100%);color:white;">
                         <option style="background: #2C3943;color:white;" val="POST NOW">POST NOW</option>
                         <option style="background: #2C3943;color:white;" val="SAVE AS DRAFT">SAVE AS DRAFT</option>
                     </select>
-                    <!-- <b-form-select style="background: linear-gradient(258.19deg, #089D9B 0%, #0BC1BB 100%);color:white;" class="col-md-4 pull-right ml-3 " v-model="selected2" :options="options2"></b-form-select> -->
-                        <a-date-picker class="float-right col-md-6"
+                        
+                       
+                    <div class="w-100 ">
+                    
+                    <select class="d-none d-md-flex ml-3 button-margins float-right col-md-4" style="padding:0.3rem;background: linear-gradient(258.19deg, #089D9B 0%, #0BC1BB 100%);color:white;">
+                        <option style="background: #2C3943;color:white;" val="POST NOW">POST NOW</option>
+                        <option style="background: #2C3943;color:white;" val="SAVE AS DRAFT">SAVE AS DRAFT</option>
+                    </select>
+                    <a-date-picker class="float-right col-md-6 d-none d-md-block"
                         placeholder="SCHEDULE FOR LATER"
                         format="YYYY-MM-DD HH:mm"
                         :showTime="{ defaultValue: moment('00:00:00', 'HH:mm:ss') }"
 
                         />
+
+                    <!-- <select class="ml-3 button-margins float-right col-md-4" style="padding:0.3rem;background: linear-gradient(258.19deg, #089D9B 0%, #0BC1BB 100%);color:white;">
+                        <option style="background: #2C3943;color:white;" val="POST NOW">POST NOW</option>
+                        <option style="background: #2C3943;color:white;" val="SAVE AS DRAFT">SAVE AS DRAFT</option>
+                    </select>
+                        <a-date-picker class="float-right col-12 col-md-12"
+                        placeholder="SCHEDULE FOR LATER"
+                        format="YYYY-MM-DD HH:mm"
+                        :showTime="{ defaultValue: moment('00:00:00', 'HH:mm:ss') }"
+
+                        /> -->
                         <!-- <p id="tooltip-button-variant" class="float-right familia mt-2" 
                         style="cursor:pointer;text-decoration-line: underline;font-size:16px;color: #2C3943;"> 
                         <span   class="fa fa-calendar">
@@ -116,9 +134,12 @@
                 <p  style="font-size:24px;font-weight:100;color:#2C3943">Post Categories</p>
             </div>
             <div class="col-md-8 mt-3">
-                <button v-b-modal.modal-1 style="border:none;background: linear-gradient(263.4deg, #089D9B 0%, #0BC1BB 100%);" class="btn btn-fill pull-right"><span style="color:white;" class="fa fa-plus"></span> NEW POST</button>
-                <b-form-select class="col-md-3 pull-right mr-3" v-model="selected" :options="options"></b-form-select>
-                <b-form-input class="col-md-3 pull-right mr-3"  placeholder="Search"></b-form-input> 
+                <button v-b-modal.modal-8 
+                style="border:none;background: linear-gradient(263.4deg, #089D9B 0%, #0BC1BB 100%);" 
+                class="button-margins2 mr-3 col-12 col-md-3 btn btn-fill pull-right"><span style="color:white;" class="fa fa-plus"></span> NEW POST</button>
+                <b-form-select class="col-md-3 pull-right mr-3" style="background: #EAF1F4;" v-model="selected" :options="options"></b-form-select>
+                <i class="fa fa-search search-icon"></i>
+                <b-form-input class="col-md-3  pull-right mr-3" style="padding-left:2rem;background: #EAF1F4;" value="SEARCH" placeholder="Search"></b-form-input> 
             </div>
 
         </div>
@@ -143,7 +164,7 @@
 </template>
 <script>
 import VueDropzone from 'vue2-dropzone'
-  import moment from 'moment'
+import moment from 'moment'
 export default {
     props:['title'],
     created(){
@@ -264,57 +285,53 @@ export default {
       return {
         link:'https://s3-alpha-sig.figma.com/img/35dd/3fbc/03d02e4aaff5cc323a47bd8ff22ea930?Expires=1574035200&Signature=HclHGHUTbBEn~X75sc-A4-JIz7AcOf8f-uzy~4T4rCbelAJbhMiykFatms1B4EvkSm8Glyu-K3KKZ9vtM5PSOr38h25N5xu~l9m5vdu4RrZNf5nAn1X6Y03Ffmk4OyWY27mecGMykBiPMwakIVB~DmkII1Nd87ZV1Q-NHe7M5rEiAn-HL~sRXoy8YwRpi1nY8Deh9yFPnNbjg2gFu502nZ12ibi-PHKdzUqv~HTecBdJiNvfoXCsKW7DcYhfIHWgOG8PUAWaf8KQh~Kros1AZoAhjMyltpFwQDIeJ57a7XfpnxdHp7Zhdohk4B4BYEaoH1V2frlpx3nQbAadF9n8tw__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA',  
         categories:[
-        {name:'Recent',
-        link:'recent.png'
-        },
-        {name:'Popular',
-        link:'popular.png'},
-        {name:'Book an Appointment',
-        link:'appointment.png'
-        },
-        {name:'Community',
-        link:'community.png'
-        },
-        {name:'Contest',
-        link:'context.png'
-        },
-        {name:'About Us',
-        link:'about.png'
-        },
-        {name:'Customer Appreciation',
-        link:'customer.png'
-        },
-        {name:'Events',
-        link:'events.png'
-        },
-        {name:'FAQs',
-        link:'faq.png'
-        },
-        {name:'Fun Facts',
-        link:'funfact.png'
-        },
-        {name:'Health and Wellness',
-        link:'health.png'
-        },
-        {name:'How-Tos',
-        link:'howto.png'
-        },
-        {name:'Products',
-        link:'products.png'
-        },
-        {name:'Promotions',
-        link:'promotions.png'
-        },
-        {name:'Quotes And Sayings',
-        link:'quotes.png'
-        },
-        {name:'Reviews',
-        link:'reviews.png'
-        }
-        
-        
-        
-        
+            {name:'Recent',
+            link:'recent.png'
+            },
+            {name:'Popular',
+            link:'popular.png'},
+            {name:'Book an Appointment',
+            link:'appointment.png'
+            },
+            {name:'Community',
+            link:'community.jpg'
+            },
+            {name:'Contest',
+            link:'context.png'
+            },
+            {name:'About Us',
+            link:'about.png'
+            },
+            {name:'Customer Appreciation',
+            link:'customer.png'
+            },
+            {name:'Events',
+            link:'events.png'
+            },
+            {name:'FAQs',
+            link:'faq.png'
+            },
+            {name:'Fun Facts',
+            link:'funfact.png'
+            },
+            {name:'Health and Wellness',
+            link:'health.png'
+            },
+            {name:'How-Tos',
+            link:'howto.png'
+            },
+            {name:'Products',
+            link:'products.png'
+            },
+            {name:'Promotions',
+            link:'promotions.png'
+            },
+            {name:'Quotes And Sayings',
+            link:'quotes.png'
+            },
+            {name:'Reviews',
+            link:'reviews.png'
+            }
         ],  
         selected2:'POST NOW',        
         selected:'INDUSTRY',
@@ -338,9 +355,9 @@ export default {
 }
 </script>
 <style scoped>
-.modal-content{
+/* .modal-content{
     margin-top:-130px !important;
-}
+} */
 .opd{
     background: linear-gradient(0deg, rgba(44, 57, 67, 0.75), rgba(44, 57, 67, 0.75)), url("https://s3-alpha-sig.figma.com/img/6724/4505/921fad164bebf5579147760b6e9e48b0?Expires=1573430400&Signature=EcdXZf5eac9-xmPXA-I0lHx2SI3PSV-NFE0Px2u4klbPaJxZghAgWc~T9cAoSLUi0HAkE5yqvC1VUgpTrLYQL0YfjKPojbAzRWb2Url9UBcCFhPHceidUUGkJWLLbHhHfAYhQlMdG7SWX5nXSsUafCOrQhIn9KzOkjeH-7eawIluNO2fvO6Oz3IAAyjq18LIUAhjGqKjXLY45F9wAaraZW2RI~IzjB1IdoAN2mheVIyW4jX6EEVsWv4eno5DHpfRceE8x~Lybmf358WDCx0AZSce1-RQTSKLL9KDdkDmqHYnFhKK~oq406Khb~lJvlvjCCj65AzbhNy3-dHY1hHUdw__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA")  no-repeat center;
 
@@ -392,10 +409,28 @@ export default {
     }
   }
 }
+.icon {
+  padding: 10px;
+  background: dodgerblue;
+  color: white;
+  min-width: 50px;
+  text-align: center;
+}
 
+.input-container {
+//   display: -ms-flexbox; /* IE10 */
+//   display: flex;
+//   width: 100%;
+//   margin-bottom: 15px;
+}
 // PRESENTATIONAL CSS
 body {
   background-color: #f7f7f9;
+}
+.input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
 }
 .top-right {
   position: absolute;
@@ -403,4 +438,50 @@ body {
   right: 2px;
 }
 
+/* Large screens ----------- */
+@media only screen  and (min-width : 1824px) {
+.search-icon{
+    position: relative;
+    left: 7.8rem;
+    top: 0.5rem;
+    z-index: 1;
+    } 
+
+ }
+
+
+@media only screen  and (min-width : 1224px) {
+.search-icon{
+    position: relative;
+    left: 7.8rem;
+    top: 0.5rem;
+    z-index: 1;
+    } 
+}
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+.search-icon{
+    position: relative;
+    left: -0.2rem;
+    top: 1.99rem;
+    z-index: 1;
+}
+
+
+}
+// placeholder {
+// color:black !important
+// }
+// ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+//   color: red !important;
+//   opacity: 1 !important; /* Firefox */
+// }
+
+// :-ms-input-placeholder { /* Internet Explorer 10-11 */
+//   color: red !important;
+// }
+
+// ::-ms-input-placeholder { /* Microsoft Edge */
+//   color: red !important;
+// }
 </style>
