@@ -14,7 +14,61 @@
             </div>
         </div>
         <hr style="border:1px solid #CBCACA">
-        <div class="row">
+        <table class="table d-none d-block d-xl-none d-lg-none d-md-none"  >
+        <thead>
+            <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Role</th>
+            <th scope="col">Posts</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <!-- <th scope="row">1</th> -->
+            <td>Islay Hill</td>
+            <td>Admin</td>
+            <td>10</td>
+            <td>
+                
+            </td>
+            <td>
+                <router-link to="/admin/edit-user?active=settings">
+                <span class="ml-3 pull-right fonts familia"  style="color:#089D9B">EDIT</span>
+                </router-link>
+            </td>
+
+            </tr>
+            <tr>
+            <!-- <th scope="row">2</th> -->
+            <td>Jacob</td>
+            <td>Editor</td>
+            <td>25</td>
+            <td>
+                <span class=" pull-right fonts familia" style="color:red;cursor:pointer;" v-b-modal.modal-2>DELETE</span>
+            </td>
+            <td>
+                <router-link to="/admin/edit-user?active=settings">
+                <span class="ml-3 pull-right fonts familia"  style="color:#089D9B">EDIT</span>
+                </router-link>
+            </td>
+            </tr>
+            <tr>
+            <!-- <th scope="row">3</th> -->
+            <td>Larry</td>
+            <td>Editor</td>
+            <td>20</td>
+            <td>
+                <span class=" pull-right fonts familia" style="color:red;cursor:pointer;" v-b-modal.modal-2>DELETE</span>
+            </td>
+            <td>
+                <router-link to="/admin/edit-user?active=settings">
+                <span class="ml-3 pull-right fonts familia"  style="color:#089D9B">EDIT</span>
+                </router-link>
+            </td>
+            </tr>
+        </tbody>
+        </table>
+        <div class="row d-none d-md-flex">
             <div class="col-md-3">
                 <h5 >Name</h5>
             </div>
@@ -25,10 +79,9 @@
                <h6>Posts</h6>
             </div>
              <div class="col-md-3">
-               <!-- dasdsa -->
             </div>
         </div>
-        <div class="row-backgrounds row mt-1" >
+        <div class="row-backgrounds d-none d-md-flex row mt-1" >
             <div class="col-md-3">
                <span class="fa fa-user" style="color: #CBCACA;"></span>  <span class="fonts">Islay Hill</span>
             </div>
@@ -44,7 +97,7 @@
                 </router-link>
             </div>
         </div>
-        <div class="row row-backgrounds mt-1">
+        <div class="row d-none d-md-flex row-backgrounds mt-1">
             <div class="col-md-3">
                 <span class="fa fa-user" style="color: #CBCACA;"></span>  <span class="fonts"> Hill</span>
             </div>
@@ -62,7 +115,7 @@
 
             </div>
         </div>
-        <div class="row row-backgrounds mt-1">
+        <div class="row d-none d-md-flex row-backgrounds mt-1">
             <div class="col-md-3">
                <span class="fa fa-user" style="color: #CBCACA;"></span>   <span class="fonts"> Jon Till</span>
             </div>
