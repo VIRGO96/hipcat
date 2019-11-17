@@ -26,6 +26,7 @@ import EditUser from 'src/pages/EditUser.vue'
 import SocialAccounts from 'src/pages/SocialAccounts.vue'
 import Billing from 'src/pages/Billing.vue'
 import UpdateBilling from 'src/pages/UpdateBilling.vue'
+import SocialCalendar from 'src/pages/SocialCalendar.vue'
 
 const routes = [
   {
@@ -72,6 +73,11 @@ const routes = [
         path: 'edit-user',
         name: 'EditUser',
         component: EditUser
+      },
+      {
+        path: 'social-calendar',
+        name: 'SocialCalendar',
+        component: SocialCalendar
       },
       {
         path: 'social-accounts',
