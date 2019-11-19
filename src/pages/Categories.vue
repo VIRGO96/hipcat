@@ -1,5 +1,5 @@
 <template>
-<div class="content">
+<!-- <div class="content"> -->
     <div class="container-fluid" style="background-color:white;">
             <b-modal id="modal-8" title="New Post" style="margin-top:-140px;">
                 <b-container>
@@ -137,9 +137,16 @@
                 <button v-b-modal.modal-8 
                 style="border:none;background: linear-gradient(263.4deg, #089D9B 0%, #0BC1BB 100%);" 
                 class="button-margins2 mr-3 col-12 col-md-3 btn btn-fill pull-right"><span style="color:white;" class="fa fa-plus"></span> NEW POST</button>
-                <b-form-select class="col-md-3 pull-right mr-3" style="background: #EAF1F4;" v-model="selected" :options="options"></b-form-select>
-                <i class="fa fa-search search-icon"></i>
-                <b-form-input class="col-md-3  pull-right mr-3" style="padding-left:2rem;background: #EAF1F4;" value="SEARCH" placeholder="Search"></b-form-input> 
+                <b-form-select class="col-md-3 pull-right mr-3 button-margins2" style="background: #EAF1F4;" v-model="selected" :options="options"></b-form-select>
+                <!-- <i class="fa fa-search search-icon"></i> -->
+                 <a-input class="col-md-3  pull-right mr-3 form-control" style="background: #EAF1F4;" placeholder="Search" >
+                    <a-icon slot="prefix" type="search"  />
+<!-- <a-icon type="search" /> -->
+                    <!-- <a-tooltip slot="suffix" title="Extra information">
+                        <a-icon type="info-circle" style="color: rgba(0,0,0,.45)" />
+                    </a-tooltip> -->
+                    </a-input>
+                <!-- <b-form-input class="col-md-3  pull-right mr-3" style="padding-left:2rem;background: #EAF1F4;" value="SEARCH" placeholder="Search"></b-form-input>  -->
             </div>
 
         </div>
@@ -159,7 +166,7 @@
             </div>
         </div>
     </div>
-</div>
+<!-- </div> -->
 
 </template>
 <script>
@@ -283,7 +290,7 @@ export default {
     },
      data() {
       return {
-        link:'https://s3-alpha-sig.figma.com/img/35dd/3fbc/03d02e4aaff5cc323a47bd8ff22ea930?Expires=1574035200&Signature=HclHGHUTbBEn~X75sc-A4-JIz7AcOf8f-uzy~4T4rCbelAJbhMiykFatms1B4EvkSm8Glyu-K3KKZ9vtM5PSOr38h25N5xu~l9m5vdu4RrZNf5nAn1X6Y03Ffmk4OyWY27mecGMykBiPMwakIVB~DmkII1Nd87ZV1Q-NHe7M5rEiAn-HL~sRXoy8YwRpi1nY8Deh9yFPnNbjg2gFu502nZ12ibi-PHKdzUqv~HTecBdJiNvfoXCsKW7DcYhfIHWgOG8PUAWaf8KQh~Kros1AZoAhjMyltpFwQDIeJ57a7XfpnxdHp7Zhdohk4B4BYEaoH1V2frlpx3nQbAadF9n8tw__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA',  
+        link:'https://s3-alpha-sig.figma.com/img/35dd/3fbc/03d02e4aaff5cc323a47bd8ff22ea930?Expires=1575244800&Signature=PMkOm3KStflhJhaGCXw33YZQ1ApznG3khHdYyADesxzBnAWRoUVk7FEMvFCrRguIKHxlSXIDrYC7YPXLnMiJA5tHgB~E8Agt5Kj4NBzcD6J0rLG2AIqbUdHxVhrwCEmkg0U~aNaO57NdQOY8mhFr9U~MeRhAJfHTMDd9Aa59GYaEYDkoSePXSFBNKq0ntbWmbnYNEBc8jOPkC9-u77zcJYuspx81FSjsgpIliyByMCyMqW2zozRc3DGLmftRFOvrrpBvULDVBRCnbO927fxckmyy1~rTBv4PkgfqOqRfS~e994N9bJV2qxSUX1w~gBOsUiOIV6VTw2-O~8lVC1htXg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA',  
         categories:[
             {name:'Recent',
             link:'recent.png'
@@ -371,6 +378,9 @@ export default {
 
 
 <style lang="scss">
+ .ant-input {
+  background: #EAF1F4;
+}
 .inputDnD {
   .form-control-file {
     position: relative;
@@ -424,9 +434,9 @@ export default {
 //   margin-bottom: 15px;
 }
 // PRESENTATIONAL CSS
-body {
-  background-color: #f7f7f9;
-}
+// body {
+//   background-color: white;
+// }
 .input-field {
   width: 100%;
   padding: 10px;
@@ -442,7 +452,7 @@ body {
 @media only screen  and (min-width : 1824px) {
 .search-icon{
     position: relative;
-    left: 7.8rem;
+    left: 9.4rem;
     top: 0.5rem;
     z-index: 1;
     } 
@@ -453,7 +463,7 @@ body {
 @media only screen  and (min-width : 1224px) {
 .search-icon{
     position: relative;
-    left: 7.8rem;
+    left: 9.4rem;
     top: 0.5rem;
     z-index: 1;
     } 
