@@ -1,6 +1,6 @@
 {
-  "name": "vue-light-bootstrap-dashboard",
-  "short_name": "vue-light-bootstrap-dashboard",
+  "name": "HIPCAT",
+  "short_name": "HIPCAT",
   "icons": [
     {
       "src": "./img/icons/android-chrome-192x192.png",
