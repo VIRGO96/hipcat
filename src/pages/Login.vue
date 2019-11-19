@@ -6,13 +6,11 @@
               <img style="width:28vh"
               src="https://s3-alpha-sig.figma.com/img/c959/4ba5/1d04d737769a35b10de28042c3912456?Expires=1574035200&Signature=HiIh3v8OdZ4T7ZopIiPGNkGEs9uuOpQtwEOfsrm8Qt~DH8GGx6PfdYuHVv42BbOj2lZl2Jrv4cxrE3uGl3sG~9xhaLU8wckfxS72azfu2QkZUVh6URXZi7mRLNIbGa9m5P-aaEmqw-gnslDTDvrzkKZtr9zz4vTMyFODymb2rEQVWRu8b-dKmeVSr4AVG-THjVw0CPQO1JEHcOK~o0S6JMTjarI50zqZusadv2IlGmFIFZZepR~lJE0Bpl-EJK9wtKHu8ftZzH~eNbRkXvvLE7jfD1GnzzotIl8jxkNR~lxT3pwYU6xqy9Ib8MwRNQV2DGHSHGUrqlbAXaEqfTlhBQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
                alt="">
-
-            </div>
-            
+            </div>            
           </div>
    </div>
-   <div class="content">
-    <div class="container-fluid" style="background-color:#F3F7FA;">
+   <div class="content  pl-0 pr-0">
+    <div class="container-fluid" style="height:100vh;background-color:#F3F7FA;">
            <div class="row">
                <div v-if="main_auth" class="col-md-12">
                    <b-card
@@ -84,7 +82,7 @@
                                 <b-form-input id="input-6" type="password"  trim></b-form-input>
                               </b-form-group>
                               <div class="row">
-                                <div class="col-md-1" style="padding-right:1.33rem;">
+                                <!-- <div class="col-md-1" style="padding-right:1.33rem;">
                                     <b-form-checkbox
                                       id="checkbox-1"
                                       name="checkbox-1"
@@ -92,10 +90,18 @@
                                       unchecked-value="not_accepted"
                                     >
                                     </b-form-checkbox>
-                                  </div>
-                                <div class="col-md-8 pl-0">
+                                  </div> -->
+                                <div class="col-md-12" style="{display: inline !important;">
+                                  <b-form-checkbox
+                                      id="checkbox-1"
+                                      name="checkbox-1"
+                                      value="accepted"
+                                      unchecked-value="not_accepted"
+                                    >
                                   <span style="color: #6C6C6C;" class="familia">I agree to the </span> <a href="#" class="familia">Terms and Conditions</a>
                                    <span style="color: #6C6C6C;" class="familia"> and</span>  <a href="#" class="familia"> Privacy Policy</a>
+
+                                    </b-form-checkbox>
                                 </div>
                               </div>
                               <div class="row mt-2">
@@ -247,7 +253,7 @@
                       </div>    
                         <div class="row mt-5">
                           <div class="col-md-6 text-center">
-                            <button  class="col-md-12 text-center p-2 text-white "
+                            <button  class="button-margins col-md-12 text-center p-2 text-white "
                              style="border:none;border-radius: 3px;background: #0BC1BB;"
                             >PREVIOUS</button>
                           </div>
@@ -302,7 +308,7 @@
                         </b-form-group>
                         <div class="row mt-5">
                           <div class="col-md-6 text-center">
-                            <button  class="col-md-12 text-center p-2 text-white "
+                            <button  class="col-md-12 button-margins text-center p-2 text-white "
                             @click="lg_screen_flags.bussiness_flag=false;lg_screen_flags.social_flag=true"
                              style="border:none;border-radius: 3px;background: #0BC1BB;"
                             >PREVIOUS</button>
@@ -365,7 +371,7 @@
                         </b-form-group>
                         <div class="row mt-5">
                           <div class="col-md-6 text-center">
-                            <button  class="col-md-12 text-center p-2 text-white "
+                            <button  class="button-margins col-md-12 text-center p-2 text-white "
                              style="border:none;border-radius: 3px;background: #0BC1BB;"
                             @click="lg_screen_flags.bussiness_flag=true;lg_screen_flags.billing_flag=false"
                             >PREVIOUS</button>
@@ -433,7 +439,7 @@
                         </div>
                         <div class="row mt-5">
                           <div class="col-md-6 text-center">
-                            <button  class="col-md-12 text-center p-2 text-white "
+                            <button  class="col-md-12 button-margins text-center p-2 text-white "
                             @click="lg_screen_flags.billing_flag=true;lg_screen_flags.payment_flag=false"
                              style="border:none;border-radius: 3px;background: #0BC1BB;"
                             >PREVIOUS</button>
@@ -475,8 +481,8 @@ export default {
           password_error:false
         },
         login:{
-          email:'',
-          password:''
+          email:'ac@gm.cm',
+          password:'dsadasfasdasf'
         }
         
       }
